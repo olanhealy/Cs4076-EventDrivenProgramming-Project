@@ -1,9 +1,0 @@
-C:/Users/olan/college/CollegeYR2SEM2/CS4076-EventDrivenProgramming/project/build-cookingRecipeApp-Desktop_Qt_6_4_2_MinGW_64_bit-Debug/CMakeFiles/cookingRecipeApp.dir
-C:/Users/olan/college/CollegeYR2SEM2/CS4076-EventDrivenProgramming/project/build-cookingRecipeApp-Desktop_Qt_6_4_2_MinGW_64_bit-Debug/CMakeFiles/edit_cache.dir
-C:/Users/olan/college/CollegeYR2SEM2/CS4076-EventDrivenProgramming/project/build-cookingRecipeApp-Desktop_Qt_6_4_2_MinGW_64_bit-Debug/CMakeFiles/rebuild_cache.dir
-C:/Users/olan/college/CollegeYR2SEM2/CS4076-EventDrivenProgramming/project/build-cookingRecipeApp-Desktop_Qt_6_4_2_MinGW_64_bit-Debug/CMakeFiles/list_install_components.dir
-C:/Users/olan/college/CollegeYR2SEM2/CS4076-EventDrivenProgramming/project/build-cookingRecipeApp-Desktop_Qt_6_4_2_MinGW_64_bit-Debug/CMakeFiles/install.dir
-C:/Users/olan/college/CollegeYR2SEM2/CS4076-EventDrivenProgramming/project/build-cookingRecipeApp-Desktop_Qt_6_4_2_MinGW_64_bit-Debug/CMakeFiles/install/local.dir
-C:/Users/olan/college/CollegeYR2SEM2/CS4076-EventDrivenProgramming/project/build-cookingRecipeApp-Desktop_Qt_6_4_2_MinGW_64_bit-Debug/CMakeFiles/install/strip.dir
-C:/Users/olan/college/CollegeYR2SEM2/CS4076-EventDrivenProgramming/project/build-cookingRecipeApp-Desktop_Qt_6_4_2_MinGW_64_bit-Debug/CMakeFiles/cookingRecipeApp_autogen_timestamp_deps.dir
-C:/Users/olan/college/CollegeYR2SEM2/CS4076-EventDrivenProgramming/project/build-cookingRecipeApp-Desktop_Qt_6_4_2_MinGW_64_bit-Debug/CMakeFiles/cookingRecipeApp_autogen.dir
