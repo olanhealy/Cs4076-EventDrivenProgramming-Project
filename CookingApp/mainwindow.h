@@ -3,6 +3,7 @@
 
 #include <QMainWindow>
 #include <QListWidget>
+#include "home.h"
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
@@ -21,5 +22,6 @@ private slots:
 
 private:
     Ui::MainWindow *ui;
+    home *homePage; //pointer to home
 };
 #endif // MAINWINDOW_H

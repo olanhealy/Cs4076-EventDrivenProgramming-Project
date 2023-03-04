@@ -30,7 +30,7 @@ public:
     QWidget *centralwidget;
     QGroupBox *groupBox_signin;
     QPushButton *pushButton_login;
-    QWidget *widget;
+    QWidget *layoutWidget;
     QVBoxLayout *verticalLayout;
     QHBoxLayout *horizontalLayout;
     QLabel *label_username;
@@ -45,29 +45,29 @@ public:
     {
         if (MainWindow->objectName().isEmpty())
             MainWindow->setObjectName("MainWindow");
-        MainWindow->resize(800, 600);
+        MainWindow->resize(1176, 677);
         centralwidget = new QWidget(MainWindow);
         centralwidget->setObjectName("centralwidget");
         groupBox_signin = new QGroupBox(centralwidget);
         groupBox_signin->setObjectName("groupBox_signin");
-        groupBox_signin->setGeometry(QRect(150, 170, 321, 141));
+        groupBox_signin->setGeometry(QRect(340, 380, 391, 141));
         pushButton_login = new QPushButton(groupBox_signin);
         pushButton_login->setObjectName("pushButton_login");
         pushButton_login->setGeometry(QRect(10, 110, 291, 29));
-        widget = new QWidget(groupBox_signin);
-        widget->setObjectName("widget");
-        widget->setGeometry(QRect(10, 40, 295, 63));
-        verticalLayout = new QVBoxLayout(widget);
+        layoutWidget = new QWidget(groupBox_signin);
+        layoutWidget->setObjectName("layoutWidget");
+        layoutWidget->setGeometry(QRect(10, 40, 295, 63));
+        verticalLayout = new QVBoxLayout(layoutWidget);
         verticalLayout->setObjectName("verticalLayout");
         verticalLayout->setContentsMargins(0, 0, 0, 0);
         horizontalLayout = new QHBoxLayout();
         horizontalLayout->setObjectName("horizontalLayout");
-        label_username = new QLabel(widget);
+        label_username = new QLabel(layoutWidget);
         label_username->setObjectName("label_username");
 
         horizontalLayout->addWidget(label_username);
 
-        lineEdit_username = new QLineEdit(widget);
+        lineEdit_username = new QLineEdit(layoutWidget);
         lineEdit_username->setObjectName("lineEdit_username");
 
         horizontalLayout->addWidget(lineEdit_username);
@@ -77,12 +77,12 @@ public:
 
         horizontalLayout_2 = new QHBoxLayout();
         horizontalLayout_2->setObjectName("horizontalLayout_2");
-        label_password = new QLabel(widget);
+        label_password = new QLabel(layoutWidget);
         label_password->setObjectName("label_password");
 
         horizontalLayout_2->addWidget(label_password);
 
-        lineEdit_password = new QLineEdit(widget);
+        lineEdit_password = new QLineEdit(layoutWidget);
         lineEdit_password->setObjectName("lineEdit_password");
 
         horizontalLayout_2->addWidget(lineEdit_password);
@@ -93,7 +93,7 @@ public:
         MainWindow->setCentralWidget(centralwidget);
         menubar = new QMenuBar(MainWindow);
         menubar->setObjectName("menubar");
-        menubar->setGeometry(QRect(0, 0, 800, 26));
+        menubar->setGeometry(QRect(0, 0, 1176, 26));
         MainWindow->setMenuBar(menubar);
         statusbar = new QStatusBar(MainWindow);
         statusbar->setObjectName("statusbar");

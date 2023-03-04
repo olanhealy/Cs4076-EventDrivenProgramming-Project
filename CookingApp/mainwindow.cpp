@@ -17,11 +17,15 @@ MainWindow::~MainWindow()
 
 void MainWindow::on_pushButton_login_clicked()
 {
-    QString username = ui->label_username->text();
-    QString password = ui->label_password->text();
+    QString username = ui->lineEdit_username->text();
+    QString password = ui->lineEdit_password->text();
 
     if(username == "olan" && password == "1") {
         QMessageBox::information(this, "Login", "Username and password is correct");
+        hide();
+        homePage = new home(this);
+        homePage->show();
+
      }else {
         QMessageBox::warning(this, "Login", "Username and password is not correct");
 }
