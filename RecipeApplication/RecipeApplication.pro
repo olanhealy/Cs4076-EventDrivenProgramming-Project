@@ -11,10 +11,12 @@ CONFIG += c++17
 SOURCES += \
     main.cpp \
     mainwindow.cpp \
+    mealpicker.cpp \
     recipe.cpp
 
 HEADERS += \
     mainwindow.h \
+    mealpicker.h \
     recipe.h
 
 FORMS += \
