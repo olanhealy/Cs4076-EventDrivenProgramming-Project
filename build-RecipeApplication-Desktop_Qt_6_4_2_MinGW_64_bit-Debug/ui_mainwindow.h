@@ -34,6 +34,7 @@ public:
     QPushButton *pushButton_Vegetarian;
     QSlider *timeSlider;
     QLabel *timeTracker;
+    QLabel *label;
     QMenuBar *menubar;
     QMenu *menuFile;
     QMenu *menuAbout;
@@ -72,6 +73,11 @@ public:
         timeTracker = new QLabel(centralwidget);
         timeTracker->setObjectName("timeTracker");
         timeTracker->setGeometry(QRect(590, 500, 63, 20));
+        label = new QLabel(centralwidget);
+        label->setObjectName("label");
+        label->setGeometry(QRect(12, 20, 711, 51));
+        label->setStyleSheet(QString::fromUtf8("background-color: rgb(85, 255, 0)\n"
+""));
         MainWindow->setCentralWidget(centralwidget);
         menubar = new QMenuBar(MainWindow);
         menubar->setObjectName("menubar");
@@ -110,6 +116,7 @@ public:
         pushButton_LowCal->setText(QCoreApplication::translate("MainWindow", "Low Calorie meals", nullptr));
         pushButton_Vegetarian->setText(QCoreApplication::translate("MainWindow", "Vegeterian meals", nullptr));
         timeTracker->setText(QCoreApplication::translate("MainWindow", "TextLabel", nullptr));
+        label->setText(QCoreApplication::translate("MainWindow", "<html><head/><body><p align=\"center\"><span style=\" font-size:12pt; font-weight:700;\">                                                                                       Olan's Cooking Application (21318204)</span></p></body></html>", nullptr));
         menuFile->setTitle(QCoreApplication::translate("MainWindow", "File", nullptr));
         menuAbout->setTitle(QCoreApplication::translate("MainWindow", "About", nullptr));
     } // retranslateUi

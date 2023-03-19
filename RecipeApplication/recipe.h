@@ -2,8 +2,7 @@
 #define RECIPE_H
 
 #include <string>
-#include <vector>
-#include <initializer_list>
+
 
 using namespace std;
 const int MAX_INGREDIENTS = 15;
@@ -11,9 +10,8 @@ const int MAX_INGREDIENTS = 15;
 class Recipe
 {
 public:
-    Recipe(string& name, string& description, string arrIngredients[], int numOfIngreidents  );
-    string& getName();
-    void setName(string& name);
+    Recipe(string& description, string arrIngredients[], int numOfIngreidents  );
+
     string& getdescription();
     void setDescription(string& getdescription);
      string* getIngridents();
@@ -25,7 +23,7 @@ public:
      template <typename T> T getCalorieTotal(T x);
 
 private:
-    string name;
+
     string description;
     string arrIngreidents[MAX_INGREDIENTS];
     int numberOfIngridents;

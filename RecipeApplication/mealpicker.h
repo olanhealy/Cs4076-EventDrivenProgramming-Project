@@ -1,11 +1,19 @@
 #ifndef MEALPICKER_H
 #define MEALPICKER_H
 
+#include "recipe.h"
+#include <string>
+using namespace std;
 
-class mealPicker
-{
+class mealPicker : public Recipe {
 public:
-    mealPicker();
+    mealPicker(string& description, string arrIngredients[], int numOfIngredients, string recipeName);
+
+    string& getRecipeName();
+    void setRecipeName(string name);
+
+private:
+    string mealName;
 };
 
 #endif // MEALPICKER_H

@@ -1,19 +1,12 @@
 #include "recipe.h"
 
-Recipe::Recipe(string& name, string& description, string arrIngredients[], int numOfIngredients) :
-    name(name), description(description)
+Recipe::Recipe(string& description, string arrIngredients[], int numOfIngredients) :
+    description(description) //initalizer list used
 {
     setIngridents(arrIngredients, numOfIngredients);
 }
 
-string& Recipe::getName() {
-    return name;
-}
 
-void Recipe::setName(string& name)
-{
-    this->name = name;
-}
 
 string& Recipe::getdescription()
 {
