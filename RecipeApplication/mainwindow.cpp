@@ -3,8 +3,12 @@
 #include <QDebug>
 #include <QDesktopServices>
 #include <QUrl>
+#include <stdlib.h>
+#include <string>
+#include <stdlib.h>
+#include <iostream>
 
-
+QString timeDisplay; //global variable
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
@@ -47,5 +51,15 @@ void MainWindow::on_actionQuit_triggered()
 void MainWindow::on_actionRepositry_triggered()
 {
     QDesktopServices::openUrl(QUrl( "https://github.com/olanhealy/Cs4076-EventDrivenProgramming-Project"));
+}
+
+
+void MainWindow::on_timeSlider_valueChanged(int value)
+{
+    timeDisplay = "";
+    QString min = QString::number(value % 60);
+    QString time = min + "" ;
+    timeDisplay = time + " Minutes";
+    ui -> timeTracker -> setText(timeDisplay);
 }
 

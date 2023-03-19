@@ -26,6 +26,8 @@ private slots:
 
     void on_actionRepositry_triggered();
 
+    void on_timeSlider_valueChanged(int value);
+
 private:
     Ui::MainWindow *ui;
 };
