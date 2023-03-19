@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>760</width>
+    <height>600</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>MainWindow</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <widget class="QPushButton" name="pushButton_HighCal">
+    <property name="geometry">
+     <rect>
+      <x>550</x>
+      <y>200</y>
+      <width>141</width>
+      <height>91</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>High calorie meals </string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="pushButton_LowCal">
+    <property name="geometry">
+     <rect>
+      <x>550</x>
+      <y>330</y>
+      <width>141</width>
+      <height>91</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Low Calorie meals</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="pushButton_3">
+    <property name="geometry">
+     <rect>
+      <x>550</x>
+      <y>450</y>
+      <width>141</width>
+      <height>91</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Vegeterian meals</string>
+    </property>
+   </widget>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>760</width>
+     <height>26</height>
+    </rect>
+   </property>
+   <widget class="QMenu" name="menuFile">
+    <property name="title">
+     <string>File</string>
+    </property>
+    <addaction name="actionQuit"/>
+   </widget>
+   <widget class="QMenu" name="menuAbout">
+    <property name="title">
+     <string>About</string>
+    </property>
+    <addaction name="actionRepositry"/>
+   </widget>
+   <addaction name="menuFile"/>
+   <addaction name="menuAbout"/>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+  <action name="actionQuit">
+   <property name="icon">
+    <iconset resource="res.qrc">
+     <normaloff>:/images/exit_icon.png</normaloff>:/images/exit_icon.png</iconset>
+   </property>
+   <property name="text">
+    <string>Quit</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+Q</string>
+   </property>
+  </action>
+  <action name="actionRepositry">
+   <property name="icon">
+    <iconset resource="res.qrc">
+     <normaloff>:/images/GitHub_logo.png</normaloff>:/images/GitHub_logo.png</iconset>
+   </property>
+   <property name="text">
+    <string>Repositry</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+G</string>
+   </property>
+  </action>
+ </widget>
+ <resources>
+  <include location="res.qrc"/>
+ </resources>
+ <connections/>
+</ui>
