@@ -11,6 +11,7 @@ public:
 
     string& getRecipeName();
     void setRecipeName(string name);
+    virtual void printRecipe();
 
 private:
     string mealName;

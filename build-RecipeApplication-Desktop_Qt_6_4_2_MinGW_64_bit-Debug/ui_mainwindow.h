@@ -44,7 +44,7 @@ public:
     {
         if (MainWindow->objectName().isEmpty())
             MainWindow->setObjectName("MainWindow");
-        MainWindow->resize(760, 600);
+        MainWindow->resize(760, 605);
         actionQuit = new QAction(MainWindow);
         actionQuit->setObjectName("actionQuit");
         QIcon icon;
@@ -68,7 +68,7 @@ public:
         pushButton_Vegetarian->setGeometry(QRect(550, 360, 141, 91));
         timeSlider = new QSlider(centralwidget);
         timeSlider->setObjectName("timeSlider");
-        timeSlider->setGeometry(QRect(20, 500, 551, 20));
+        timeSlider->setGeometry(QRect(20, 500, 581, 20));
         timeSlider->setOrientation(Qt::Horizontal);
         timeTracker = new QLabel(centralwidget);
         timeTracker->setObjectName("timeTracker");
@@ -115,7 +115,7 @@ public:
         pushButton_HighCal->setText(QCoreApplication::translate("MainWindow", "High calorie meals ", nullptr));
         pushButton_LowCal->setText(QCoreApplication::translate("MainWindow", "Low Calorie meals", nullptr));
         pushButton_Vegetarian->setText(QCoreApplication::translate("MainWindow", "Vegeterian meals", nullptr));
-        timeTracker->setText(QCoreApplication::translate("MainWindow", "TextLabel", nullptr));
+        timeTracker->setText(QString());
         label->setText(QCoreApplication::translate("MainWindow", "<html><head/><body><p align=\"center\"><span style=\" font-size:12pt; font-weight:700;\">                                                                                       Olan's Cooking Application (21318204)</span></p></body></html>", nullptr));
         menuFile->setTitle(QCoreApplication::translate("MainWindow", "File", nullptr));
         menuAbout->setTitle(QCoreApplication::translate("MainWindow", "About", nullptr));

@@ -12,15 +12,17 @@ class Recipe
 public:
     Recipe(string& description, string arrIngredients[], int numOfIngreidents  );
 
-    string& getdescription();
-    void setDescription(string& getdescription);
+    string& getDescription();
+     void setDescription(string& getdescription);
      string* getIngridents();
      void setIngridents(string arrIngridients[], int numberOfIngreidents);
     void addIngreidents(string* arrIngredients);
     double getCalories(const string arrIngredients);
     int getNumOfIngreidents();
     double getCalories(string arrIngridents[]);
-     template <typename T> T getCalorieTotal(T x);
+    template <typename T> T getCalorieTotal(T x);
+    virtual void printRecipe() {
+    }
 
 private:
 

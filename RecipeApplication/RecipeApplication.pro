@@ -9,15 +9,19 @@ CONFIG += c++17
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
 SOURCES += \
+    ingridents.cpp \
     main.cpp \
     mainwindow.cpp \
     mealpicker.cpp \
-    recipe.cpp
+    recipe.cpp \
+    recipemaker.cpp
 
 HEADERS += \
+    ingridents.h \
     mainwindow.h \
     mealpicker.h \
-    recipe.h
+    recipe.h \
+    recipemaker.h
 
 FORMS += \
     mainwindow.ui
