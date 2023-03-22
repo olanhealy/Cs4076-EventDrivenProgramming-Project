@@ -3,6 +3,7 @@
 #include <QDebug>
 #include <QDesktopServices>
 #include <QUrl>
+#include <QGridLayout>
 #include <stdlib.h>
 #include <string>
 #include <stdlib.h>
@@ -15,6 +16,8 @@ MainWindow::MainWindow(QWidget *parent)
     , ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
+    QGridLayout *layout = new QGridLayout();
+
 }
 
 MainWindow::~MainWindow()
@@ -26,6 +29,7 @@ MainWindow::~MainWindow()
 void MainWindow::on_pushButton_HighCal_clicked()
 {
     qDebug() << "High cal";
+
 
 }
 

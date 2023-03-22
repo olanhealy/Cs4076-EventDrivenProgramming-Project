@@ -21,8 +21,8 @@ public:
     int getNumOfIngreidents();
     double getCalories(string arrIngridents[]);
     template <typename T> T getCalorieTotal(T x);
-    virtual void printRecipe() {
-    }
+     void printRecipe();
+
 
 private:
 

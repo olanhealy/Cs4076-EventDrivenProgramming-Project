@@ -1,6 +1,7 @@
 #include "recipe.h"
 #include <iostream>
 
+
 Recipe::Recipe(string& description, string arrIngredients[], int numOfIngredients) :
     description(description) //initalizer list used
 {
@@ -69,6 +70,6 @@ void printRecipe(Recipe& recipe) {
     cout << "Recipe: " << recipe.getDescription() << endl;
     cout << "Ingridents: " << endl;
     for (int i = 0; i < recipe.getNumOfIngreidents(); i++) {
-        cout << "-" << recipe.getIngridents() << endl;
+        cout << "-" << recipe.getIngridents()[i] << endl;
     }
 }
