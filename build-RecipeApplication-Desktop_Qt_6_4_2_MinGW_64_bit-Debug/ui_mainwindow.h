@@ -21,6 +21,7 @@
 #include <QtWidgets/QSlider>
 #include <QtWidgets/QStatusBar>
 #include <QtWidgets/QTextBrowser>
+#include <QtWidgets/QVBoxLayout>
 #include <QtWidgets/QWidget>
 
 QT_BEGIN_NAMESPACE
@@ -31,9 +32,6 @@ public:
     QAction *actionQuit;
     QAction *actionRepositry;
     QWidget *centralwidget;
-    QPushButton *pushButton_HighCal;
-    QPushButton *pushButton_LowCal;
-    QPushButton *pushButton_Vegetarian;
     QSlider *timeSlider;
     QLabel *timeTracker;
     QLabel *mainHeading;
@@ -49,6 +47,11 @@ public:
     QCheckBox *ingridentNine;
     QCheckBox *ingridentTen;
     QLabel *totalCalories;
+    QWidget *verticalLayoutWidget;
+    QVBoxLayout *verticalLayout;
+    QPushButton *pushButton_HighCal;
+    QPushButton *pushButton_LowCal;
+    QPushButton *pushButton_Vegetarian;
     QMenuBar *menubar;
     QMenu *menuFile;
     QMenu *menuAbout;
@@ -71,30 +74,21 @@ public:
         actionRepositry->setIcon(icon1);
         centralwidget = new QWidget(MainWindow);
         centralwidget->setObjectName("centralwidget");
-        pushButton_HighCal = new QPushButton(centralwidget);
-        pushButton_HighCal->setObjectName("pushButton_HighCal");
-        pushButton_HighCal->setGeometry(QRect(550, 110, 141, 91));
-        pushButton_LowCal = new QPushButton(centralwidget);
-        pushButton_LowCal->setObjectName("pushButton_LowCal");
-        pushButton_LowCal->setGeometry(QRect(550, 240, 141, 91));
-        pushButton_Vegetarian = new QPushButton(centralwidget);
-        pushButton_Vegetarian->setObjectName("pushButton_Vegetarian");
-        pushButton_Vegetarian->setGeometry(QRect(550, 370, 141, 91));
         timeSlider = new QSlider(centralwidget);
         timeSlider->setObjectName("timeSlider");
-        timeSlider->setGeometry(QRect(10, 510, 581, 20));
+        timeSlider->setGeometry(QRect(10, 520, 581, 20));
         timeSlider->setOrientation(Qt::Horizontal);
         timeTracker = new QLabel(centralwidget);
         timeTracker->setObjectName("timeTracker");
-        timeTracker->setGeometry(QRect(620, 510, 63, 20));
+        timeTracker->setGeometry(QRect(630, 520, 63, 20));
         mainHeading = new QLabel(centralwidget);
         mainHeading->setObjectName("mainHeading");
-        mainHeading->setGeometry(QRect(12, 20, 711, 51));
+        mainHeading->setGeometry(QRect(0, 0, 761, 61));
         mainHeading->setStyleSheet(QString::fromUtf8("background-color: rgb(85, 255, 0)\n"
 ""));
         textBrowser = new QTextBrowser(centralwidget);
         textBrowser->setObjectName("textBrowser");
-        textBrowser->setGeometry(QRect(30, 120, 441, 371));
+        textBrowser->setGeometry(QRect(0, 60, 441, 371));
         textBrowser->setStyleSheet(QString::fromUtf8("background-color: rgb(255, 85, 127)"));
         ingridentOne = new QCheckBox(centralwidget);
         ingridentOne->setObjectName("ingridentOne");
@@ -128,9 +122,30 @@ public:
         ingridentTen->setGeometry(QRect(40, 400, 88, 24));
         totalCalories = new QLabel(centralwidget);
         totalCalories->setObjectName("totalCalories");
-        totalCalories->setGeometry(QRect(30, 420, 441, 71));
+        totalCalories->setGeometry(QRect(0, 430, 441, 71));
         totalCalories->setStyleSheet(QString::fromUtf8("background-color: \n"
 "rgb(255, 170, 255)"));
+        verticalLayoutWidget = new QWidget(centralwidget);
+        verticalLayoutWidget->setObjectName("verticalLayoutWidget");
+        verticalLayoutWidget->setGeometry(QRect(600, 60, 160, 421));
+        verticalLayout = new QVBoxLayout(verticalLayoutWidget);
+        verticalLayout->setObjectName("verticalLayout");
+        verticalLayout->setContentsMargins(0, 0, 0, 0);
+        pushButton_HighCal = new QPushButton(verticalLayoutWidget);
+        pushButton_HighCal->setObjectName("pushButton_HighCal");
+
+        verticalLayout->addWidget(pushButton_HighCal);
+
+        pushButton_LowCal = new QPushButton(verticalLayoutWidget);
+        pushButton_LowCal->setObjectName("pushButton_LowCal");
+
+        verticalLayout->addWidget(pushButton_LowCal);
+
+        pushButton_Vegetarian = new QPushButton(verticalLayoutWidget);
+        pushButton_Vegetarian->setObjectName("pushButton_Vegetarian");
+
+        verticalLayout->addWidget(pushButton_Vegetarian);
+
         MainWindow->setCentralWidget(centralwidget);
         menubar = new QMenuBar(MainWindow);
         menubar->setObjectName("menubar");
@@ -165,9 +180,6 @@ public:
 #if QT_CONFIG(shortcut)
         actionRepositry->setShortcut(QCoreApplication::translate("MainWindow", "Ctrl+G", nullptr));
 #endif // QT_CONFIG(shortcut)
-        pushButton_HighCal->setText(QCoreApplication::translate("MainWindow", "High calorie meals ", nullptr));
-        pushButton_LowCal->setText(QCoreApplication::translate("MainWindow", "Low Calorie meals", nullptr));
-        pushButton_Vegetarian->setText(QCoreApplication::translate("MainWindow", "Vegeterian meals", nullptr));
         timeTracker->setText(QString());
         mainHeading->setText(QCoreApplication::translate("MainWindow", "<html><head/><body><p align=\"center\"><span style=\" font-size:12pt; font-weight:700;\">                                                                                       Olan's Cooking Application (21318204)</span></p></body></html>", nullptr));
         textBrowser->setHtml(QCoreApplication::translate("MainWindow", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
@@ -189,6 +201,9 @@ public:
         ingridentNine->setText(QCoreApplication::translate("MainWindow", "CheckBox", nullptr));
         ingridentTen->setText(QCoreApplication::translate("MainWindow", "CheckBox", nullptr));
         totalCalories->setText(QCoreApplication::translate("MainWindow", "<html><head/><body><p><span style=\" font-size:14pt; font-weight:900;\">Total Calories = </span></p></body></html>", nullptr));
+        pushButton_HighCal->setText(QCoreApplication::translate("MainWindow", "High calorie meals ", nullptr));
+        pushButton_LowCal->setText(QCoreApplication::translate("MainWindow", "Low Calorie meals", nullptr));
+        pushButton_Vegetarian->setText(QCoreApplication::translate("MainWindow", "Vegeterian meals", nullptr));
         menuFile->setTitle(QCoreApplication::translate("MainWindow", "File", nullptr));
         menuAbout->setTitle(QCoreApplication::translate("MainWindow", "About", nullptr));
     } // retranslateUi
