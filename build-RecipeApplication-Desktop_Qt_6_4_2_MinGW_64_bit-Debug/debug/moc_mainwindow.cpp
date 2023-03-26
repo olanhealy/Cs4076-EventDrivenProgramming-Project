@@ -37,7 +37,7 @@ struct qt_meta_stringdata_MainWindow_t {
     char stringdata7[6];
     char stringdata8[33];
     char stringdata9[15];
-    char stringdata10[14];
+    char stringdata10[18];
     char stringdata11[15];
 };
 #define QT_MOC_LITERAL(ofs, len) \
@@ -54,8 +54,8 @@ Q_CONSTINIT static const qt_meta_stringdata_MainWindow_t qt_meta_stringdata_Main
         QT_MOC_LITERAL(151, 5),  // "value"
         QT_MOC_LITERAL(157, 32),  // "on_pushButton_Vegetarian_clicked"
         QT_MOC_LITERAL(190, 14),  // "onMealSelected"
-        QT_MOC_LITERAL(205, 13),  // "const Recipe*"
-        QT_MOC_LITERAL(219, 14)   // "selectedRecipe"
+        QT_MOC_LITERAL(205, 17),  // "const mealPicker*"
+        QT_MOC_LITERAL(223, 14)   // "selectedRecipe"
     },
     "MainWindow",
     "on_pushButton_HighCal_clicked",
@@ -67,7 +67,7 @@ Q_CONSTINIT static const qt_meta_stringdata_MainWindow_t qt_meta_stringdata_Main
     "value",
     "on_pushButton_Vegetarian_clicked",
     "onMealSelected",
-    "const Recipe*",
+    "const mealPicker*",
     "selectedRecipe"
 };
 #undef QT_MOC_LITERAL
@@ -131,7 +131,7 @@ Q_CONSTINIT const QMetaObject MainWindow::staticMetaObject = { {
         QtPrivate::TypeAndForceComplete<void, std::false_type>,
         // method 'onMealSelected'
         QtPrivate::TypeAndForceComplete<void, std::false_type>,
-        QtPrivate::TypeAndForceComplete<const Recipe *, std::false_type>
+        QtPrivate::TypeAndForceComplete<const mealPicker *, std::false_type>
     >,
     nullptr
 } };
@@ -148,7 +148,7 @@ void MainWindow::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, 
         case 3: _t->on_actionRepositry_triggered(); break;
         case 4: _t->on_timeSlider_valueChanged((*reinterpret_cast< std::add_pointer_t<int>>(_a[1]))); break;
         case 5: _t->on_pushButton_Vegetarian_clicked(); break;
-        case 6: _t->onMealSelected((*reinterpret_cast< std::add_pointer_t<const Recipe*>>(_a[1]))); break;
+        case 6: _t->onMealSelected((*reinterpret_cast< std::add_pointer_t<const mealPicker*>>(_a[1]))); break;
         default: ;
         }
     }

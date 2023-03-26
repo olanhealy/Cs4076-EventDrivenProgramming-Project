@@ -22,7 +22,7 @@ public:
    void selectHighCalorieRecipe(int index);
 
 signals:
-   void recipeSelected(const Recipe* selectedRecipe);
+   void mealSelected(const mealPicker* selectedMeal);
 
 
 private slots:
@@ -34,7 +34,7 @@ private slots:
 
 private:
    Ui::Highcalorie *ui;
-   std::vector<Recipe*> highCalorieRecipes;
+   std::vector<mealPicker*> highCalorieRecipes;
      void memoryMangement();
 
 };

@@ -49,7 +49,7 @@ void MainWindow::on_pushButton_HighCal_clicked()
 {
     qDebug() << "High calorie";
     Highcalorie  *highcal = new Highcalorie(this);
-    connect(highcal, &Highcalorie::recipeSelected, this, &MainWindow::onMealSelected);
+    connect(highcal, &Highcalorie::mealSelected, this, &MainWindow::onMealSelected);
     highcal->show();
 }
 
@@ -90,18 +90,31 @@ void MainWindow::on_timeSlider_valueChanged(int value)
     timeDisplay = time + " Minutes";
     ui -> timeTracker -> setText(timeDisplay);
 }
-void MainWindow::onMealSelected(const Recipe* selectedRecipe) {
+void MainWindow::onMealSelected(const mealPicker* selectedRecipe) {
     // Clear the previous contents of the scroll area
-    QLayoutItem* item;
-    while ((item = scrollAreaLayout->takeAt(0)) != nullptr) {
-        delete item->widget();
-        delete item;
-    }
+      qDebug() << "Entered onMealSelected";
+      QLayoutItem* item;
+      while ((item = scrollAreaLayout->takeAt(0)) != nullptr) {
+          if (item->widget()) {
+              item->widget()->deleteLater();
+          }
+          delete item;
+      }
+
+    qDebug() << "Cleared previous contents";
+    if (selectedRecipe == nullptr) {
+          qDebug() << "selectedRecipe is nullptr";
+          return;
+      }
 
     // Add the ingredients of the selected recipe along with checkboxes
+
     const string* ingredients = selectedRecipe->getIngredients();
+     qDebug() << "Got ingredients";
     for (int i = 0; i < selectedRecipe->getNumOfIngredients(); i++) {
+         qDebug() << "Creating checkbox for ingredient" << i;
         QCheckBox* checkBox = new QCheckBox(QString::fromStdString(ingredients[i]));
         scrollAreaLayout->addWidget(checkBox);
     }
+      qDebug() << "All checkboxes added";
 }

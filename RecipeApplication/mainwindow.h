@@ -35,7 +35,7 @@ private slots:
     void on_timeSlider_valueChanged(int value);
 
     void on_pushButton_Vegetarian_clicked();
-    void onMealSelected(const Recipe* selectedRecipe);
+    void onMealSelected(const mealPicker* selectedRecipe);
 
 private:
     Ui::MainWindow *ui;

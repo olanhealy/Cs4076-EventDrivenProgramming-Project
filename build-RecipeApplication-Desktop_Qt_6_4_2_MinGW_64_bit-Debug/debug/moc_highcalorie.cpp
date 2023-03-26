@@ -28,10 +28,10 @@ namespace {
 struct qt_meta_stringdata_Highcalorie_t {
     uint offsetsAndSizes[16];
     char stringdata0[12];
-    char stringdata1[15];
+    char stringdata1[13];
     char stringdata2[1];
-    char stringdata3[14];
-    char stringdata4[15];
+    char stringdata3[18];
+    char stringdata4[13];
     char stringdata5[24];
     char stringdata6[23];
     char stringdata7[25];
@@ -41,19 +41,19 @@ struct qt_meta_stringdata_Highcalorie_t {
 Q_CONSTINIT static const qt_meta_stringdata_Highcalorie_t qt_meta_stringdata_Highcalorie = {
     {
         QT_MOC_LITERAL(0, 11),  // "Highcalorie"
-        QT_MOC_LITERAL(12, 14),  // "recipeSelected"
-        QT_MOC_LITERAL(27, 0),  // ""
-        QT_MOC_LITERAL(28, 13),  // "const Recipe*"
-        QT_MOC_LITERAL(42, 14),  // "selectedRecipe"
+        QT_MOC_LITERAL(12, 12),  // "mealSelected"
+        QT_MOC_LITERAL(25, 0),  // ""
+        QT_MOC_LITERAL(26, 17),  // "const mealPicker*"
+        QT_MOC_LITERAL(44, 12),  // "selectedMeal"
         QT_MOC_LITERAL(57, 23),  // "on_chickenCurry_clicked"
         QT_MOC_LITERAL(81, 22),  // "on_beefBurgers_clicked"
         QT_MOC_LITERAL(104, 24)   // "on_homemadePizza_clicked"
     },
     "Highcalorie",
-    "recipeSelected",
+    "mealSelected",
     "",
-    "const Recipe*",
-    "selectedRecipe",
+    "const mealPicker*",
+    "selectedMeal",
     "on_chickenCurry_clicked",
     "on_beefBurgers_clicked",
     "on_homemadePizza_clicked"
@@ -102,9 +102,9 @@ Q_CONSTINIT const QMetaObject Highcalorie::staticMetaObject = { {
     qt_incomplete_metaTypeArray<qt_meta_stringdata_Highcalorie_t,
         // Q_OBJECT / Q_GADGET
         QtPrivate::TypeAndForceComplete<Highcalorie, std::true_type>,
-        // method 'recipeSelected'
+        // method 'mealSelected'
         QtPrivate::TypeAndForceComplete<void, std::false_type>,
-        QtPrivate::TypeAndForceComplete<const Recipe *, std::false_type>,
+        QtPrivate::TypeAndForceComplete<const mealPicker *, std::false_type>,
         // method 'on_chickenCurry_clicked'
         QtPrivate::TypeAndForceComplete<void, std::false_type>,
         // method 'on_beefBurgers_clicked'
@@ -121,7 +121,7 @@ void Highcalorie::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id,
         auto *_t = static_cast<Highcalorie *>(_o);
         (void)_t;
         switch (_id) {
-        case 0: _t->recipeSelected((*reinterpret_cast< std::add_pointer_t<const Recipe*>>(_a[1]))); break;
+        case 0: _t->mealSelected((*reinterpret_cast< std::add_pointer_t<const mealPicker*>>(_a[1]))); break;
         case 1: _t->on_chickenCurry_clicked(); break;
         case 2: _t->on_beefBurgers_clicked(); break;
         case 3: _t->on_homemadePizza_clicked(); break;
@@ -130,8 +130,8 @@ void Highcalorie::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id,
     } else if (_c == QMetaObject::IndexOfMethod) {
         int *result = reinterpret_cast<int *>(_a[0]);
         {
-            using _t = void (Highcalorie::*)(const Recipe * );
-            if (_t _q_method = &Highcalorie::recipeSelected; *reinterpret_cast<_t *>(_a[1]) == _q_method) {
+            using _t = void (Highcalorie::*)(const mealPicker * );
+            if (_t _q_method = &Highcalorie::mealSelected; *reinterpret_cast<_t *>(_a[1]) == _q_method) {
                 *result = 0;
                 return;
             }
@@ -170,7 +170,7 @@ int Highcalorie::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
 }
 
 // SIGNAL 0
-void Highcalorie::recipeSelected(const Recipe * _t1)
+void Highcalorie::mealSelected(const mealPicker * _t1)
 {
     void *_a[] = { nullptr, const_cast<void*>(reinterpret_cast<const void*>(std::addressof(_t1))) };
     QMetaObject::activate(this, &staticMetaObject, 0, _a);
