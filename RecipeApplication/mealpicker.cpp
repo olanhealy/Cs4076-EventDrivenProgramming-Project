@@ -5,8 +5,7 @@
 using namespace std;
 
 
-#include "mealPicker.h"
-#include "recipe.h"
+
 Recipe* recipe;
 using namespace std;
 mealPicker::mealPicker(string& description, string arrIngredients[], int numOfIngredients,string recipeName)
@@ -24,8 +23,11 @@ void mealPicker::printRecipe() {
     cout << "Name: " << mealName;
     cout << "Recipe: " << recipe -> getDescription() << endl;
     cout << "Ingridents: " << endl;
-    for (int i = 0; i < recipe -> getNumOfIngreidents(); i++) {
-        cout << "-" << recipe -> getIngridents()[i] << endl;
+    for (int i = 0; i < recipe -> getNumOfIngredients(); i++) {
+        cout << "-" << recipe -> getIngredients()[i] << endl;
 
 }
+}
+mealPicker::~mealPicker() {
+
 }

@@ -9,22 +9,27 @@ CONFIG += c++17
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
 SOURCES += \
-    ingridents.cpp \
+    highcalorie.cpp \
+    lowcaloire.cpp \
     main.cpp \
     mainwindow.cpp \
     mealpicker.cpp \
     recipe.cpp \
-    recipemaker.cpp
+    vegetarian.cpp
 
 HEADERS += \
-    ingridents.h \
+    highcalorie.h \
+    lowcaloire.h \
     mainwindow.h \
     mealpicker.h \
     recipe.h \
-    recipemaker.h
+    vegetarian.h
 
 FORMS += \
-    mainwindow.ui
+    highcalorie.ui \
+    lowcaloire.ui \
+    mainwindow.ui \
+    vegetarian.ui
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin

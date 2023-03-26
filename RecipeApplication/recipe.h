@@ -11,24 +11,25 @@ class Recipe
 {
 public:
     Recipe(string& description, string arrIngredients[], int numOfIngreidents  );
-
+    virtual ~Recipe() ;
     string& getDescription();
-     void setDescription(string& getdescription);
-     string* getIngridents();
-     void setIngridents(string arrIngridients[], int numberOfIngreidents);
-    void addIngreidents(string* arrIngredients);
+    void setDescription(string& getdescription);
+    const string* getIngredients() const;
+    void setIngredients(string arrIngredients[], int numberOfIngredients);
+    void addIngredients(string* arrIngredients);
     double getCalories(const string arrIngredients);
-    int getNumOfIngreidents();
-    double getCalories(string arrIngridents[]);
+    int getNumOfIngredients() const;
+    double getCalories(string arrIngredients[]);
     template <typename T> T getCalorieTotal(T x);
-     void printRecipe();
+    virtual void printRecipe() = 0; //make printrecipe function pure virutal (abstract class)
+    //use const for getting ingridents and number as dont want them to be changed for a particular recipe
 
 
-private:
+protected:
 
     string description;
-    string arrIngreidents[MAX_INGREDIENTS];
-    int numberOfIngridents;
+    string arrIngredients[MAX_INGREDIENTS];
+    int numberOfIngridents; //changed from private to protected so mealPicker can modify if needed
 };
 
 #endif // RECIPE_H

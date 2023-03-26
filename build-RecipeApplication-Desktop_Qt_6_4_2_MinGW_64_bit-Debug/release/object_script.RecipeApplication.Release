@@ -1,0 +1,12 @@
+release/highcalorie.o
+release/lowcaloire.o
+release/main.o
+release/mainwindow.o
+release/mealpicker.o
+release/recipe.o
+release/vegetarian.o
+release/qrc_res.o
+release/moc_highcalorie.o
+release/moc_lowcaloire.o
+release/moc_mainwindow.o
+release/moc_vegetarian.o

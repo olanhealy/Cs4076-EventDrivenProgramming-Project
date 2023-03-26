@@ -2,6 +2,12 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
+#include "highcalorie.h"
+#include "lowcaloire.h"
+#include "vegetarian.h"
+#include "recipe.h"
+#include "mealpicker.h"
+
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
@@ -20,7 +26,7 @@ private slots:
 
     void on_pushButton_LowCal_clicked();
 
-    void on_pushButton_3_clicked();
+
 
     void on_actionQuit_triggered();
 
@@ -28,7 +34,11 @@ private slots:
 
     void on_timeSlider_valueChanged(int value);
 
+    void on_pushButton_Vegetarian_clicked();
+    void onMealSelected(const Recipe* selectedRecipe);
+
 private:
     Ui::MainWindow *ui;
+     QLayout* scrollAreaLayout;
 };
 #endif // MAINWINDOW_H

@@ -5,7 +5,7 @@
 Recipe::Recipe(string& description, string arrIngredients[], int numOfIngredients) :
     description(description) //initalizer list used
 {
-    setIngridents(arrIngredients, numOfIngredients);
+    setIngredients(arrIngredients, numOfIngredients);
 }
 
 
@@ -19,26 +19,24 @@ void Recipe::setDescription(string& description)
 {
     this->description = description;
 }
-string* Recipe::getIngridents()
-{
-    return arrIngreidents;
+const string* Recipe::getIngredients() const {
+    return arrIngredients;
 }
-
-void Recipe::setIngridents(string arrIngridients[], int numberOfIngreidents)
+void Recipe::setIngredients(string arrIngredients[], int numberOfIngredients)
 {
-    for (int i = 0; i < numberOfIngreidents; i++) {
-        this->arrIngreidents[i] = arrIngridients[i];
+    for (int i = 0; i < numberOfIngredients; i++) {
+        this->arrIngredients[i] = arrIngredients[i];
     }
 }
-int Recipe::getNumOfIngreidents(){
+int Recipe::getNumOfIngredients() const {
     return numberOfIngridents;
 }
 
-void Recipe::addIngreidents(string* arrIngredients)
+void Recipe::addIngredients(string* arrIngredients)
 {
-    int numIngredients = getNumOfIngreidents();
+    int numIngredients = getNumOfIngredients();
     for (int i = 0; i < MAX_INGREDIENTS && arrIngredients[i] != ""; i++) {
-        arrIngreidents[numIngredients + i] = arrIngredients[i];
+        arrIngredients[numIngredients + i] = arrIngredients[i];
     }
 }
 
@@ -69,7 +67,10 @@ void printRecipe(Recipe& recipe) {
 
     cout << "Recipe: " << recipe.getDescription() << endl;
     cout << "Ingridents: " << endl;
-    for (int i = 0; i < recipe.getNumOfIngreidents(); i++) {
-        cout << "-" << recipe.getIngridents()[i] << endl;
+    for (int i = 0; i < recipe.getNumOfIngredients(); i++) {
+        cout << "-" << recipe.getIngredients()[i] << endl;
     }
+}
+Recipe::~Recipe() {
+
 }

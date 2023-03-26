@@ -18,9 +18,9 @@
 #include <QtWidgets/QMenu>
 #include <QtWidgets/QMenuBar>
 #include <QtWidgets/QPushButton>
+#include <QtWidgets/QScrollArea>
 #include <QtWidgets/QSlider>
 #include <QtWidgets/QStatusBar>
-#include <QtWidgets/QTextBrowser>
 #include <QtWidgets/QVBoxLayout>
 #include <QtWidgets/QWidget>
 
@@ -35,23 +35,24 @@ public:
     QSlider *timeSlider;
     QLabel *timeTracker;
     QLabel *mainHeading;
-    QTextBrowser *textBrowser;
-    QCheckBox *ingridentOne;
-    QCheckBox *ingridentTwo;
-    QCheckBox *ingridentThree;
-    QCheckBox *ingridentFour;
-    QCheckBox *ingridentFive;
-    QCheckBox *ingridentSix;
-    QCheckBox *ingridentSeven;
-    QCheckBox *ingridentEight;
-    QCheckBox *ingridentNine;
-    QCheckBox *ingridentTen;
     QLabel *totalCalories;
     QWidget *verticalLayoutWidget;
     QVBoxLayout *verticalLayout;
     QPushButton *pushButton_HighCal;
     QPushButton *pushButton_LowCal;
     QPushButton *pushButton_Vegetarian;
+    QScrollArea *scrollArea;
+    QWidget *scrollAreaWidgetContents;
+    QCheckBox *ingridentTen;
+    QCheckBox *ingridentOne;
+    QCheckBox *ingridentNine;
+    QCheckBox *ingridentTwo;
+    QCheckBox *ingridentThree;
+    QCheckBox *ingridentFour;
+    QCheckBox *ingridentFive;
+    QCheckBox *ingridentSeven;
+    QCheckBox *ingridentSix;
+    QCheckBox *ingridentEight;
     QMenuBar *menubar;
     QMenu *menuFile;
     QMenu *menuAbout;
@@ -86,40 +87,6 @@ public:
         mainHeading->setGeometry(QRect(0, 0, 761, 61));
         mainHeading->setStyleSheet(QString::fromUtf8("background-color: rgb(85, 255, 0)\n"
 ""));
-        textBrowser = new QTextBrowser(centralwidget);
-        textBrowser->setObjectName("textBrowser");
-        textBrowser->setGeometry(QRect(0, 60, 441, 371));
-        textBrowser->setStyleSheet(QString::fromUtf8("background-color: rgb(255, 85, 127)"));
-        ingridentOne = new QCheckBox(centralwidget);
-        ingridentOne->setObjectName("ingridentOne");
-        ingridentOne->setGeometry(QRect(40, 130, 88, 24));
-        ingridentTwo = new QCheckBox(centralwidget);
-        ingridentTwo->setObjectName("ingridentTwo");
-        ingridentTwo->setGeometry(QRect(40, 160, 88, 24));
-        ingridentThree = new QCheckBox(centralwidget);
-        ingridentThree->setObjectName("ingridentThree");
-        ingridentThree->setGeometry(QRect(40, 190, 88, 24));
-        ingridentFour = new QCheckBox(centralwidget);
-        ingridentFour->setObjectName("ingridentFour");
-        ingridentFour->setGeometry(QRect(40, 220, 88, 24));
-        ingridentFive = new QCheckBox(centralwidget);
-        ingridentFive->setObjectName("ingridentFive");
-        ingridentFive->setGeometry(QRect(40, 250, 88, 24));
-        ingridentSix = new QCheckBox(centralwidget);
-        ingridentSix->setObjectName("ingridentSix");
-        ingridentSix->setGeometry(QRect(40, 280, 88, 24));
-        ingridentSeven = new QCheckBox(centralwidget);
-        ingridentSeven->setObjectName("ingridentSeven");
-        ingridentSeven->setGeometry(QRect(40, 310, 88, 24));
-        ingridentEight = new QCheckBox(centralwidget);
-        ingridentEight->setObjectName("ingridentEight");
-        ingridentEight->setGeometry(QRect(40, 340, 88, 24));
-        ingridentNine = new QCheckBox(centralwidget);
-        ingridentNine->setObjectName("ingridentNine");
-        ingridentNine->setGeometry(QRect(40, 370, 88, 24));
-        ingridentTen = new QCheckBox(centralwidget);
-        ingridentTen->setObjectName("ingridentTen");
-        ingridentTen->setGeometry(QRect(40, 400, 88, 24));
         totalCalories = new QLabel(centralwidget);
         totalCalories->setObjectName("totalCalories");
         totalCalories->setGeometry(QRect(0, 430, 441, 71));
@@ -146,6 +113,45 @@ public:
 
         verticalLayout->addWidget(pushButton_Vegetarian);
 
+        scrollArea = new QScrollArea(centralwidget);
+        scrollArea->setObjectName("scrollArea");
+        scrollArea->setGeometry(QRect(0, 60, 441, 371));
+        scrollArea->setStyleSheet(QString::fromUtf8("background-color: rgb(255, 0, 127)"));
+        scrollArea->setWidgetResizable(true);
+        scrollAreaWidgetContents = new QWidget();
+        scrollAreaWidgetContents->setObjectName("scrollAreaWidgetContents");
+        scrollAreaWidgetContents->setGeometry(QRect(0, 0, 439, 369));
+        ingridentTen = new QCheckBox(scrollAreaWidgetContents);
+        ingridentTen->setObjectName("ingridentTen");
+        ingridentTen->setGeometry(QRect(0, 0, 88, 24));
+        ingridentOne = new QCheckBox(scrollAreaWidgetContents);
+        ingridentOne->setObjectName("ingridentOne");
+        ingridentOne->setGeometry(QRect(0, 20, 88, 24));
+        ingridentNine = new QCheckBox(scrollAreaWidgetContents);
+        ingridentNine->setObjectName("ingridentNine");
+        ingridentNine->setGeometry(QRect(0, 40, 88, 24));
+        ingridentTwo = new QCheckBox(scrollAreaWidgetContents);
+        ingridentTwo->setObjectName("ingridentTwo");
+        ingridentTwo->setGeometry(QRect(0, 60, 88, 24));
+        ingridentThree = new QCheckBox(scrollAreaWidgetContents);
+        ingridentThree->setObjectName("ingridentThree");
+        ingridentThree->setGeometry(QRect(0, 80, 88, 24));
+        ingridentFour = new QCheckBox(scrollAreaWidgetContents);
+        ingridentFour->setObjectName("ingridentFour");
+        ingridentFour->setGeometry(QRect(0, 100, 88, 24));
+        ingridentFive = new QCheckBox(scrollAreaWidgetContents);
+        ingridentFive->setObjectName("ingridentFive");
+        ingridentFive->setGeometry(QRect(0, 120, 88, 24));
+        ingridentSeven = new QCheckBox(scrollAreaWidgetContents);
+        ingridentSeven->setObjectName("ingridentSeven");
+        ingridentSeven->setGeometry(QRect(0, 140, 88, 24));
+        ingridentSix = new QCheckBox(scrollAreaWidgetContents);
+        ingridentSix->setObjectName("ingridentSix");
+        ingridentSix->setGeometry(QRect(0, 160, 88, 24));
+        ingridentEight = new QCheckBox(scrollAreaWidgetContents);
+        ingridentEight->setObjectName("ingridentEight");
+        ingridentEight->setGeometry(QRect(0, 180, 88, 24));
+        scrollArea->setWidget(scrollAreaWidgetContents);
         MainWindow->setCentralWidget(centralwidget);
         menubar = new QMenuBar(MainWindow);
         menubar->setObjectName("menubar");
@@ -182,28 +188,20 @@ public:
 #endif // QT_CONFIG(shortcut)
         timeTracker->setText(QString());
         mainHeading->setText(QCoreApplication::translate("MainWindow", "<html><head/><body><p align=\"center\"><span style=\" font-size:12pt; font-weight:700;\">                                                                                       Olan's Cooking Application (21318204)</span></p></body></html>", nullptr));
-        textBrowser->setHtml(QCoreApplication::translate("MainWindow", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
-"<html><head><meta name=\"qrichtext\" content=\"1\" /><meta charset=\"utf-8\" /><style type=\"text/css\">\n"
-"p, li { white-space: pre-wrap; }\n"
-"hr { height: 1px; border-width: 0; }\n"
-"li.unchecked::marker { content: \"\\2610\"; }\n"
-"li.checked::marker { content: \"\\2612\"; }\n"
-"</style></head><body style=\" font-family:'Segoe UI'; font-size:9pt; font-weight:400; font-style:normal;\">\n"
-"<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><br /></p></body></html>", nullptr));
-        ingridentOne->setText(QCoreApplication::translate("MainWindow", "CheckBox", nullptr));
-        ingridentTwo->setText(QCoreApplication::translate("MainWindow", "CheckBox", nullptr));
-        ingridentThree->setText(QCoreApplication::translate("MainWindow", "CheckBox", nullptr));
-        ingridentFour->setText(QCoreApplication::translate("MainWindow", "CheckBox", nullptr));
-        ingridentFive->setText(QCoreApplication::translate("MainWindow", "CheckBox", nullptr));
-        ingridentSix->setText(QCoreApplication::translate("MainWindow", "CheckBox", nullptr));
-        ingridentSeven->setText(QCoreApplication::translate("MainWindow", "CheckBox", nullptr));
-        ingridentEight->setText(QCoreApplication::translate("MainWindow", "CheckBox", nullptr));
-        ingridentNine->setText(QCoreApplication::translate("MainWindow", "CheckBox", nullptr));
-        ingridentTen->setText(QCoreApplication::translate("MainWindow", "CheckBox", nullptr));
         totalCalories->setText(QCoreApplication::translate("MainWindow", "<html><head/><body><p><span style=\" font-size:14pt; font-weight:900;\">Total Calories = </span></p></body></html>", nullptr));
         pushButton_HighCal->setText(QCoreApplication::translate("MainWindow", "High calorie meals ", nullptr));
         pushButton_LowCal->setText(QCoreApplication::translate("MainWindow", "Low Calorie meals", nullptr));
         pushButton_Vegetarian->setText(QCoreApplication::translate("MainWindow", "Vegeterian meals", nullptr));
+        ingridentTen->setText(QCoreApplication::translate("MainWindow", "CheckBox", nullptr));
+        ingridentOne->setText(QCoreApplication::translate("MainWindow", "CheckBox", nullptr));
+        ingridentNine->setText(QCoreApplication::translate("MainWindow", "CheckBox", nullptr));
+        ingridentTwo->setText(QCoreApplication::translate("MainWindow", "CheckBox", nullptr));
+        ingridentThree->setText(QCoreApplication::translate("MainWindow", "CheckBox", nullptr));
+        ingridentFour->setText(QCoreApplication::translate("MainWindow", "CheckBox", nullptr));
+        ingridentFive->setText(QCoreApplication::translate("MainWindow", "CheckBox", nullptr));
+        ingridentSeven->setText(QCoreApplication::translate("MainWindow", "CheckBox", nullptr));
+        ingridentSix->setText(QCoreApplication::translate("MainWindow", "CheckBox", nullptr));
+        ingridentEight->setText(QCoreApplication::translate("MainWindow", "CheckBox", nullptr));
         menuFile->setTitle(QCoreApplication::translate("MainWindow", "File", nullptr));
         menuAbout->setTitle(QCoreApplication::translate("MainWindow", "About", nullptr));
     } // retranslateUi

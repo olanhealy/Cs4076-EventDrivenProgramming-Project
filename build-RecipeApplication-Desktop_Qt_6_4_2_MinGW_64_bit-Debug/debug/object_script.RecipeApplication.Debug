@@ -1,0 +1,12 @@
+debug/highcalorie.o
+debug/lowcaloire.o
+debug/main.o
+debug/mainwindow.o
+debug/mealpicker.o
+debug/recipe.o
+debug/vegetarian.o
+debug/qrc_res.o
+debug/moc_highcalorie.o
+debug/moc_lowcaloire.o
+debug/moc_mainwindow.o
+debug/moc_vegetarian.o
