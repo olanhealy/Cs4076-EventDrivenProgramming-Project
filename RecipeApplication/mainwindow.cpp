@@ -23,26 +23,17 @@ MainWindow::MainWindow(QWidget *parent)
 
 
 {
-    scrollAreaLayout = new QVBoxLayout;
-
-       // Create a new QWidget to hold the layout
-       QWidget* scrollAreaWidget = new QWidget;
-
-       // Set the layout for the scroll area's widget
-       scrollAreaWidget->setLayout(scrollAreaLayout);
-
-       // Set the scroll area's widget
-       ui->scrollArea->setWidget(scrollAreaWidget);
-
-
-
-
-
-
-
-
-
     ui->setupUi(this);
+
+    qDebug() << "1st";
+    QWidget *scroller = new QWidget;
+    qDebug() << "2nd";
+    QVBoxLayout* layout = new QVBoxLayout(scroller);
+    qDebug() << "3rd";
+    ui->scrollArea->setWidget(scroller);
+    qDebug() << "4th";
+    ui->scrollArea->setWidgetResizable(true);
+    qDebug() << "5th";
 
 
 
