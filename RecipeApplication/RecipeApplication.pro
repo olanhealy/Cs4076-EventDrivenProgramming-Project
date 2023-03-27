@@ -10,28 +10,19 @@ CONFIG += c++17
 
 SOURCES += \
     food.cpp \
-    highcalorie.cpp \
-    lowcaloire.cpp \
     main.cpp \
     mainwindow.cpp \
     mealpicker.cpp \
-    recipe.cpp \
-    vegetarian.cpp
+    recipe.cpp
 
 HEADERS += \
     food.h \
-    highcalorie.h \
-    lowcaloire.h \
     mainwindow.h \
     mealpicker.h \
-    recipe.h \
-    vegetarian.h
+    recipe.h
 
 FORMS += \
-    highcalorie.ui \
-    lowcaloire.ui \
-    mainwindow.ui \
-    vegetarian.ui
+    mainwindow.ui
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin

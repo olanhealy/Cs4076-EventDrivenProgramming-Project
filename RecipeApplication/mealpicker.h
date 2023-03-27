@@ -7,9 +7,9 @@ using namespace std;
 
 class mealPicker : public Recipe {
 public:
-    mealPicker(string& description, string arrIngredients[], int numOfIngredients, string recipeName);
+    mealPicker(string description, string arrIngredients[], int numOfIngredients, string recipeName);
 
-    string& getRecipeName();
+    string getRecipeName();
     void setRecipeName(string name);
     void printRecipe() override;
      ~mealPicker();

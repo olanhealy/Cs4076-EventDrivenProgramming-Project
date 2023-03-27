@@ -2,9 +2,13 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
-#include "highcalorie.h"
-#include "lowcaloire.h"
-#include "vegetarian.h"
+#include <QRadioButton>
+#include "qboxlayout.h"
+#include <QGroupBox>
+#include <QVBoxLayout>
+#include <QCheckBox>
+
+
 #include "recipe.h"
 #include "mealpicker.h"
 
@@ -20,13 +24,9 @@ class MainWindow : public QMainWindow
 public:
     MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
+    QVBoxLayout* checkBoxLayout;
 
 private slots:
-    void on_pushButton_HighCal_clicked();
-
-    void on_pushButton_LowCal_clicked();
-
-
 
     void on_actionQuit_triggered();
 
@@ -34,11 +34,26 @@ private slots:
 
     void on_timeSlider_valueChanged(int value);
 
-    void on_pushButton_Vegetarian_clicked();
-    void onMealSelected(const mealPicker* selectedRecipe);
+    void on_beefBurgers_clicked();
+
+    void on_pastaBake_clicked();
+
+    void on_buritoBowl_clicked();
+
+    void on_shpeardsPie_clicked();
+
+    void on_stirFry_clicked();
+
+    void on_chickenCurry_clicked();
+    void updateCheckBox(int recipeNo);
+    void on_checkBox_stateChanged(int state);
+
+
 
 private:
     Ui::MainWindow *ui;
-     QLayout* scrollAreaLayout;
+
+
+
 };
 #endif // MAINWINDOW_H

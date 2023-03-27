@@ -12,13 +12,12 @@
 #include <QtCore/QVariant>
 #include <QtGui/QAction>
 #include <QtWidgets/QApplication>
-#include <QtWidgets/QCheckBox>
+#include <QtWidgets/QGroupBox>
 #include <QtWidgets/QLabel>
 #include <QtWidgets/QMainWindow>
 #include <QtWidgets/QMenu>
 #include <QtWidgets/QMenuBar>
-#include <QtWidgets/QPushButton>
-#include <QtWidgets/QScrollArea>
+#include <QtWidgets/QRadioButton>
 #include <QtWidgets/QSlider>
 #include <QtWidgets/QStatusBar>
 #include <QtWidgets/QVBoxLayout>
@@ -38,21 +37,13 @@ public:
     QLabel *totalCalories;
     QWidget *verticalLayoutWidget;
     QVBoxLayout *verticalLayout;
-    QPushButton *pushButton_HighCal;
-    QPushButton *pushButton_LowCal;
-    QPushButton *pushButton_Vegetarian;
-    QScrollArea *scrollArea;
-    QWidget *scrollAreaWidgetContents;
-    QCheckBox *ingridentTen;
-    QCheckBox *ingridentOne;
-    QCheckBox *ingridentNine;
-    QCheckBox *ingridentTwo;
-    QCheckBox *ingridentThree;
-    QCheckBox *ingridentFour;
-    QCheckBox *ingridentFive;
-    QCheckBox *ingridentSeven;
-    QCheckBox *ingridentSix;
-    QCheckBox *ingridentEight;
+    QRadioButton *beefBurgers;
+    QRadioButton *pastaBake;
+    QRadioButton *buritoBowl;
+    QRadioButton *shpeardsPie;
+    QRadioButton *stirFry;
+    QRadioButton *chickenCurry;
+    QGroupBox *checkBox;
     QMenuBar *menubar;
     QMenu *menuFile;
     QMenu *menuAbout;
@@ -98,64 +89,43 @@ public:
         verticalLayout = new QVBoxLayout(verticalLayoutWidget);
         verticalLayout->setObjectName("verticalLayout");
         verticalLayout->setContentsMargins(0, 0, 0, 0);
-        pushButton_HighCal = new QPushButton(verticalLayoutWidget);
-        pushButton_HighCal->setObjectName("pushButton_HighCal");
+        beefBurgers = new QRadioButton(verticalLayoutWidget);
+        beefBurgers->setObjectName("beefBurgers");
 
-        verticalLayout->addWidget(pushButton_HighCal);
+        verticalLayout->addWidget(beefBurgers);
 
-        pushButton_LowCal = new QPushButton(verticalLayoutWidget);
-        pushButton_LowCal->setObjectName("pushButton_LowCal");
+        pastaBake = new QRadioButton(verticalLayoutWidget);
+        pastaBake->setObjectName("pastaBake");
 
-        verticalLayout->addWidget(pushButton_LowCal);
+        verticalLayout->addWidget(pastaBake);
 
-        pushButton_Vegetarian = new QPushButton(verticalLayoutWidget);
-        pushButton_Vegetarian->setObjectName("pushButton_Vegetarian");
+        buritoBowl = new QRadioButton(verticalLayoutWidget);
+        buritoBowl->setObjectName("buritoBowl");
 
-        verticalLayout->addWidget(pushButton_Vegetarian);
+        verticalLayout->addWidget(buritoBowl);
 
-        scrollArea = new QScrollArea(centralwidget);
-        scrollArea->setObjectName("scrollArea");
-        scrollArea->setGeometry(QRect(0, 60, 441, 371));
-        scrollArea->setStyleSheet(QString::fromUtf8("background-color: rgb(255, 0, 127)"));
-        scrollArea->setWidgetResizable(true);
-        scrollAreaWidgetContents = new QWidget();
-        scrollAreaWidgetContents->setObjectName("scrollAreaWidgetContents");
-        scrollAreaWidgetContents->setGeometry(QRect(0, 0, 439, 369));
-        ingridentTen = new QCheckBox(scrollAreaWidgetContents);
-        ingridentTen->setObjectName("ingridentTen");
-        ingridentTen->setGeometry(QRect(0, 0, 88, 24));
-        ingridentOne = new QCheckBox(scrollAreaWidgetContents);
-        ingridentOne->setObjectName("ingridentOne");
-        ingridentOne->setGeometry(QRect(0, 20, 88, 24));
-        ingridentNine = new QCheckBox(scrollAreaWidgetContents);
-        ingridentNine->setObjectName("ingridentNine");
-        ingridentNine->setGeometry(QRect(0, 40, 88, 24));
-        ingridentTwo = new QCheckBox(scrollAreaWidgetContents);
-        ingridentTwo->setObjectName("ingridentTwo");
-        ingridentTwo->setGeometry(QRect(0, 60, 88, 24));
-        ingridentThree = new QCheckBox(scrollAreaWidgetContents);
-        ingridentThree->setObjectName("ingridentThree");
-        ingridentThree->setGeometry(QRect(0, 80, 88, 24));
-        ingridentFour = new QCheckBox(scrollAreaWidgetContents);
-        ingridentFour->setObjectName("ingridentFour");
-        ingridentFour->setGeometry(QRect(0, 100, 88, 24));
-        ingridentFive = new QCheckBox(scrollAreaWidgetContents);
-        ingridentFive->setObjectName("ingridentFive");
-        ingridentFive->setGeometry(QRect(0, 120, 88, 24));
-        ingridentSeven = new QCheckBox(scrollAreaWidgetContents);
-        ingridentSeven->setObjectName("ingridentSeven");
-        ingridentSeven->setGeometry(QRect(0, 140, 88, 24));
-        ingridentSix = new QCheckBox(scrollAreaWidgetContents);
-        ingridentSix->setObjectName("ingridentSix");
-        ingridentSix->setGeometry(QRect(0, 160, 88, 24));
-        ingridentEight = new QCheckBox(scrollAreaWidgetContents);
-        ingridentEight->setObjectName("ingridentEight");
-        ingridentEight->setGeometry(QRect(0, 180, 88, 24));
-        scrollArea->setWidget(scrollAreaWidgetContents);
+        shpeardsPie = new QRadioButton(verticalLayoutWidget);
+        shpeardsPie->setObjectName("shpeardsPie");
+
+        verticalLayout->addWidget(shpeardsPie);
+
+        stirFry = new QRadioButton(verticalLayoutWidget);
+        stirFry->setObjectName("stirFry");
+
+        verticalLayout->addWidget(stirFry);
+
+        chickenCurry = new QRadioButton(verticalLayoutWidget);
+        chickenCurry->setObjectName("chickenCurry");
+
+        verticalLayout->addWidget(chickenCurry);
+
+        checkBox = new QGroupBox(centralwidget);
+        checkBox->setObjectName("checkBox");
+        checkBox->setGeometry(QRect(10, 120, 201, 211));
         MainWindow->setCentralWidget(centralwidget);
         menubar = new QMenuBar(MainWindow);
         menubar->setObjectName("menubar");
-        menubar->setGeometry(QRect(0, 0, 760, 26));
+        menubar->setGeometry(QRect(0, 0, 760, 22));
         menuFile = new QMenu(menubar);
         menuFile->setObjectName("menuFile");
         menuAbout = new QMenu(menubar);
@@ -189,19 +159,13 @@ public:
         timeTracker->setText(QString());
         mainHeading->setText(QCoreApplication::translate("MainWindow", "<html><head/><body><p align=\"center\"><span style=\" font-size:12pt; font-weight:700;\">                                                                                       Olan's Cooking Application (21318204)</span></p></body></html>", nullptr));
         totalCalories->setText(QCoreApplication::translate("MainWindow", "<html><head/><body><p><span style=\" font-size:14pt; font-weight:900;\">Total Calories = </span></p></body></html>", nullptr));
-        pushButton_HighCal->setText(QCoreApplication::translate("MainWindow", "High calorie meals ", nullptr));
-        pushButton_LowCal->setText(QCoreApplication::translate("MainWindow", "Low Calorie meals", nullptr));
-        pushButton_Vegetarian->setText(QCoreApplication::translate("MainWindow", "Vegeterian meals", nullptr));
-        ingridentTen->setText(QCoreApplication::translate("MainWindow", "CheckBox", nullptr));
-        ingridentOne->setText(QCoreApplication::translate("MainWindow", "CheckBox", nullptr));
-        ingridentNine->setText(QCoreApplication::translate("MainWindow", "CheckBox", nullptr));
-        ingridentTwo->setText(QCoreApplication::translate("MainWindow", "CheckBox", nullptr));
-        ingridentThree->setText(QCoreApplication::translate("MainWindow", "CheckBox", nullptr));
-        ingridentFour->setText(QCoreApplication::translate("MainWindow", "CheckBox", nullptr));
-        ingridentFive->setText(QCoreApplication::translate("MainWindow", "CheckBox", nullptr));
-        ingridentSeven->setText(QCoreApplication::translate("MainWindow", "CheckBox", nullptr));
-        ingridentSix->setText(QCoreApplication::translate("MainWindow", "CheckBox", nullptr));
-        ingridentEight->setText(QCoreApplication::translate("MainWindow", "CheckBox", nullptr));
+        beefBurgers->setText(QCoreApplication::translate("MainWindow", "Beef Burgers", nullptr));
+        pastaBake->setText(QCoreApplication::translate("MainWindow", "Pasta Bake", nullptr));
+        buritoBowl->setText(QCoreApplication::translate("MainWindow", "Burito Bowl", nullptr));
+        shpeardsPie->setText(QCoreApplication::translate("MainWindow", "Shepards Pie", nullptr));
+        stirFry->setText(QCoreApplication::translate("MainWindow", "Stir Fry", nullptr));
+        chickenCurry->setText(QCoreApplication::translate("MainWindow", "Chicken Curry", nullptr));
+        checkBox->setTitle(QString());
         menuFile->setTitle(QCoreApplication::translate("MainWindow", "File", nullptr));
         menuAbout->setTitle(QCoreApplication::translate("MainWindow", "About", nullptr));
     } // retranslateUi

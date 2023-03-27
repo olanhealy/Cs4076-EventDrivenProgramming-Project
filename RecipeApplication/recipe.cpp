@@ -29,7 +29,7 @@ void Recipe::setIngredients(string arrIngredients[], int numberOfIngredients)
     }
 }
 int Recipe::getNumOfIngredients() const {
-    return numberOfIngridents;
+    return numberOfIngredients;
 }
 
 void Recipe::addIngredients(string* arrIngredients)

@@ -8,11 +8,11 @@ using namespace std;
 
 Recipe* recipe;
 using namespace std;
-mealPicker::mealPicker(string& description, string arrIngredients[], int numOfIngredients,string recipeName)
+mealPicker::mealPicker(string description, string arrIngredients[], int numOfIngredients,string recipeName)
     : Recipe(description, arrIngredients, numOfIngredients), mealName(recipeName) {
     recipe = this;
 }
-string& mealPicker::getRecipeName() {
+string mealPicker::getRecipeName() {
     return mealName;
 }
 
@@ -27,6 +27,8 @@ void mealPicker::printRecipe() {
         cout << "-" << recipe -> getIngredients()[i] << endl;
 
 }
+
+
 }
 mealPicker::~mealPicker() {
 

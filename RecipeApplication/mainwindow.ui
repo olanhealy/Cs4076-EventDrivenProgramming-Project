@@ -85,183 +85,61 @@ rgb(255, 170, 255)</string>
     </property>
     <layout class="QVBoxLayout" name="verticalLayout">
      <item>
-      <widget class="QPushButton" name="pushButton_HighCal">
+      <widget class="QRadioButton" name="beefBurgers">
        <property name="text">
-        <string>High calorie meals </string>
+        <string>Beef Burgers</string>
        </property>
       </widget>
      </item>
      <item>
-      <widget class="QPushButton" name="pushButton_LowCal">
+      <widget class="QRadioButton" name="pastaBake">
        <property name="text">
-        <string>Low Calorie meals</string>
+        <string>Pasta Bake</string>
        </property>
       </widget>
      </item>
      <item>
-      <widget class="QPushButton" name="pushButton_Vegetarian">
+      <widget class="QRadioButton" name="buritoBowl">
        <property name="text">
-        <string>Vegeterian meals</string>
+        <string>Burito Bowl</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QRadioButton" name="shpeardsPie">
+       <property name="text">
+        <string>Shepards Pie</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QRadioButton" name="stirFry">
+       <property name="text">
+        <string>Stir Fry</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QRadioButton" name="chickenCurry">
+       <property name="text">
+        <string>Chicken Curry</string>
        </property>
       </widget>
      </item>
     </layout>
    </widget>
-   <widget class="QScrollArea" name="scrollArea">
+   <widget class="QGroupBox" name="checkBox">
     <property name="geometry">
      <rect>
-      <x>0</x>
-      <y>60</y>
-      <width>441</width>
-      <height>371</height>
+      <x>10</x>
+      <y>120</y>
+      <width>201</width>
+      <height>211</height>
      </rect>
     </property>
-    <property name="styleSheet">
-     <string notr="true">background-color: rgb(255, 0, 127)</string>
+    <property name="title">
+     <string/>
     </property>
-    <property name="widgetResizable">
-     <bool>true</bool>
-    </property>
-    <widget class="QWidget" name="scrollAreaWidgetContents">
-     <property name="geometry">
-      <rect>
-       <x>0</x>
-       <y>0</y>
-       <width>439</width>
-       <height>369</height>
-      </rect>
-     </property>
-     <widget class="QCheckBox" name="ingridentTen">
-      <property name="geometry">
-       <rect>
-        <x>0</x>
-        <y>0</y>
-        <width>88</width>
-        <height>24</height>
-       </rect>
-      </property>
-      <property name="text">
-       <string>CheckBox</string>
-      </property>
-     </widget>
-     <widget class="QCheckBox" name="ingridentOne">
-      <property name="geometry">
-       <rect>
-        <x>0</x>
-        <y>20</y>
-        <width>88</width>
-        <height>24</height>
-       </rect>
-      </property>
-      <property name="text">
-       <string>CheckBox</string>
-      </property>
-     </widget>
-     <widget class="QCheckBox" name="ingridentNine">
-      <property name="geometry">
-       <rect>
-        <x>0</x>
-        <y>40</y>
-        <width>88</width>
-        <height>24</height>
-       </rect>
-      </property>
-      <property name="text">
-       <string>CheckBox</string>
-      </property>
-     </widget>
-     <widget class="QCheckBox" name="ingridentTwo">
-      <property name="geometry">
-       <rect>
-        <x>0</x>
-        <y>60</y>
-        <width>88</width>
-        <height>24</height>
-       </rect>
-      </property>
-      <property name="text">
-       <string>CheckBox</string>
-      </property>
-     </widget>
-     <widget class="QCheckBox" name="ingridentThree">
-      <property name="geometry">
-       <rect>
-        <x>0</x>
-        <y>80</y>
-        <width>88</width>
-        <height>24</height>
-       </rect>
-      </property>
-      <property name="text">
-       <string>CheckBox</string>
-      </property>
-     </widget>
-     <widget class="QCheckBox" name="ingridentFour">
-      <property name="geometry">
-       <rect>
-        <x>0</x>
-        <y>100</y>
-        <width>88</width>
-        <height>24</height>
-       </rect>
-      </property>
-      <property name="text">
-       <string>CheckBox</string>
-      </property>
-     </widget>
-     <widget class="QCheckBox" name="ingridentFive">
-      <property name="geometry">
-       <rect>
-        <x>0</x>
-        <y>120</y>
-        <width>88</width>
-        <height>24</height>
-       </rect>
-      </property>
-      <property name="text">
-       <string>CheckBox</string>
-      </property>
-     </widget>
-     <widget class="QCheckBox" name="ingridentSeven">
-      <property name="geometry">
-       <rect>
-        <x>0</x>
-        <y>140</y>
-        <width>88</width>
-        <height>24</height>
-       </rect>
-      </property>
-      <property name="text">
-       <string>CheckBox</string>
-      </property>
-     </widget>
-     <widget class="QCheckBox" name="ingridentSix">
-      <property name="geometry">
-       <rect>
-        <x>0</x>
-        <y>160</y>
-        <width>88</width>
-        <height>24</height>
-       </rect>
-      </property>
-      <property name="text">
-       <string>CheckBox</string>
-      </property>
-     </widget>
-     <widget class="QCheckBox" name="ingridentEight">
-      <property name="geometry">
-       <rect>
-        <x>0</x>
-        <y>180</y>
-        <width>88</width>
-        <height>24</height>
-       </rect>
-      </property>
-      <property name="text">
-       <string>CheckBox</string>
-      </property>
-     </widget>
-    </widget>
    </widget>
   </widget>
   <widget class="QMenuBar" name="menubar">
@@ -270,7 +148,7 @@ rgb(255, 170, 255)</string>
      <x>0</x>
      <y>0</y>
      <width>760</width>
-     <height>26</height>
+     <height>22</height>
     </rect>
    </property>
    <widget class="QMenu" name="menuFile">

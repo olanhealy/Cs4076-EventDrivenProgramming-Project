@@ -5,7 +5,7 @@
 
 
 using namespace std;
-const int MAX_INGREDIENTS = 15;
+const int MAX_INGREDIENTS = 6;
 
 class Recipe
 {
@@ -29,7 +29,7 @@ protected:
 
     string description;
     string arrIngredients[MAX_INGREDIENTS];
-    int numberOfIngridents; //changed from private to protected so mealPicker can modify if needed
+    int numberOfIngredients; //changed from private to protected so mealPicker can modify if needed
 };
 
 #endif // RECIPE_H
