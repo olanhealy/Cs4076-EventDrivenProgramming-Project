@@ -1,8 +1,13 @@
 #ifndef MAINWINDOW_H
 #define MAINWINDOW_H
-#include <QDesktopServices>
-#include <QUrl>
+
 #include <QMainWindow>
+#include <QRadioButton>
+#include <QDesktopServices>
+#include "Recipe.h"
+#include "Ingredient.h"
+#include "LiquidIngredient.h"
+#include "SolidIngredient.h"
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
@@ -17,10 +22,21 @@ public:
     ~MainWindow();
 
 private slots:
+    void on_highCal_clicked();
+    void on_lowCal_clicked();
+    void on_recipeRadioButton_toggled(bool checked);
     void on_actionexit_triggered();
     void on_actionRepositry_triggered();
 
 private:
     Ui::MainWindow *ui;
+    Recipe chickenCurry;
+    Recipe burritoBowl;
+    Recipe salad;
+    Recipe pastaDish;
+    QRadioButton *chickenCurryRadioButton;
+    QRadioButton *burritoBowlRadioButton;
+    QRadioButton *saladRadioButton;
+    QRadioButton *pastaDishRadioButton;
 };
 #endif // MAINWINDOW_H

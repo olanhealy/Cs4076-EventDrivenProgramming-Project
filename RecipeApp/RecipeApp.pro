@@ -13,12 +13,14 @@ SOURCES += \
     liquidingredient.cpp \
     main.cpp \
     mainwindow.cpp \
+    recipe.cpp \
     solidingredient.cpp
 
 HEADERS += \
     ingredient.h \
     liquidingredient.h \
     mainwindow.h \
+    recipe.h \
     solidingredient.h
 
 FORMS += \
