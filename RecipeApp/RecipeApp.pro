@@ -9,17 +9,17 @@ CONFIG += c++17
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
 SOURCES += \
-    food.cpp \
+    ingredient.cpp \
+    liquidingredient.cpp \
     main.cpp \
     mainwindow.cpp \
-    mealpicker.cpp \
-    recipe.cpp
+    solidingredient.cpp
 
 HEADERS += \
-    food.h \
+    ingredient.h \
+    liquidingredient.h \
     mainwindow.h \
-    mealpicker.h \
-    recipe.h
+    solidingredient.h
 
 FORMS += \
     mainwindow.ui
@@ -30,4 +30,5 @@ else: unix:!android: target.path = /opt/$${TARGET}/bin
 !isEmpty(target.path): INSTALLS += target
 
 RESOURCES += \
+    res.qrc \
     res.qrc

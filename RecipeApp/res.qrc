@@ -1,6 +1,6 @@
 <RCC>
     <qresource prefix="/images">
         <file>GitHub_logo.png</file>
-        <file>exit_icon.png</file>
+        <file>exit.png</file>
     </qresource>
 </RCC>

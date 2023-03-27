@@ -43,7 +43,7 @@ public:
     QRadioButton *shpeardsPie;
     QRadioButton *stirFry;
     QRadioButton *chickenCurry;
-    QGroupBox *checkBox;
+    QGroupBox *ingredientsGroupBox;
     QMenuBar *menubar;
     QMenu *menuFile;
     QMenu *menuAbout;
@@ -119,13 +119,13 @@ public:
 
         verticalLayout->addWidget(chickenCurry);
 
-        checkBox = new QGroupBox(centralwidget);
-        checkBox->setObjectName("checkBox");
-        checkBox->setGeometry(QRect(10, 120, 201, 211));
+        ingredientsGroupBox = new QGroupBox(centralwidget);
+        ingredientsGroupBox->setObjectName("ingredientsGroupBox");
+        ingredientsGroupBox->setGeometry(QRect(10, 120, 201, 211));
         MainWindow->setCentralWidget(centralwidget);
         menubar = new QMenuBar(MainWindow);
         menubar->setObjectName("menubar");
-        menubar->setGeometry(QRect(0, 0, 760, 22));
+        menubar->setGeometry(QRect(0, 0, 760, 26));
         menuFile = new QMenu(menubar);
         menuFile->setObjectName("menuFile");
         menuAbout = new QMenu(menubar);
@@ -165,7 +165,7 @@ public:
         shpeardsPie->setText(QCoreApplication::translate("MainWindow", "Shepards Pie", nullptr));
         stirFry->setText(QCoreApplication::translate("MainWindow", "Stir Fry", nullptr));
         chickenCurry->setText(QCoreApplication::translate("MainWindow", "Chicken Curry", nullptr));
-        checkBox->setTitle(QString());
+        ingredientsGroupBox->setTitle(QString());
         menuFile->setTitle(QCoreApplication::translate("MainWindow", "File", nullptr));
         menuAbout->setTitle(QCoreApplication::translate("MainWindow", "About", nullptr));
     } // retranslateUi
