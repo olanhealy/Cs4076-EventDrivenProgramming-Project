@@ -98,15 +98,26 @@
    <widget class="QLabel" name="recipeLabel">
     <property name="geometry">
      <rect>
-      <x>42</x>
-      <y>119</y>
+      <x>0</x>
+      <y>150</y>
       <width>331</width>
-      <height>291</height>
+      <height>71</height>
      </rect>
     </property>
     <property name="text">
-     <string>TextLabel</string>
+     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:18pt; font-weight:700;&quot;&gt;HELLO&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
     </property>
+   </widget>
+   <widget class="QWidget" name="formLayoutWidget">
+    <property name="geometry">
+     <rect>
+      <x>0</x>
+      <y>230</y>
+      <width>411</width>
+      <height>171</height>
+     </rect>
+    </property>
+    <layout class="QFormLayout" name="ingredientsLayout"/>
    </widget>
   </widget>
   <widget class="QMenuBar" name="menubar">

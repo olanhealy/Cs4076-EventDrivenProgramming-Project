@@ -14,3 +14,6 @@ QString Ingredient::getName() const {
 float Ingredient::getQuantity() const {
     return quantity;
 }
+QString Ingredient::toString() const {
+    return getName() + ": " + QString::number(getQuantity()) + " " + getUnit();
+}

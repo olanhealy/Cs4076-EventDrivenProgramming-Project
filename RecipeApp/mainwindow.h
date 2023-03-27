@@ -4,6 +4,8 @@
 #include <QMainWindow>
 #include <QRadioButton>
 #include <QDesktopServices>
+#include <QCheckBox>
+#include <QGridLayout>
 #include "Recipe.h"
 #include "Ingredient.h"
 #include "LiquidIngredient.h"
@@ -27,6 +29,8 @@ private slots:
     void on_recipeRadioButton_toggled(bool checked);
     void on_actionexit_triggered();
     void on_actionRepositry_triggered();
+    void displayIngredientsCheckboxes(const Recipe& recipe);
+
 
 private:
     Ui::MainWindow *ui;

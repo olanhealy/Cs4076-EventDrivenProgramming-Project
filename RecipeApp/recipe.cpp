@@ -40,10 +40,15 @@ T Recipe::getIngredientDetail(const Ingredient& ingredient) const {
 
 QString Recipe::toString() const {
     QString result = "Recipe: " + name + "\n";
+    return result;
+}
+QString Recipe::toStringIngredients() const {
+    QString result;
     for (const auto& ingredient : ingredients) {
         result += "- " + ingredient->getName() + ": " + QString::number(ingredient->getQuantity()) + " " + ingredient->getUnit() + "\n";
     }
     return result;
 }
+
 
 

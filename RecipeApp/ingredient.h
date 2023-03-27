@@ -13,6 +13,7 @@ public:
     virtual QString getName() const;
     virtual float getQuantity() const;
     virtual QString getUnit() const = 0; // Pure virtual function (abstact class)
+    QString toString() const;
 
 protected:
     QString name;

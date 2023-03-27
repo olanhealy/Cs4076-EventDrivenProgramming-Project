@@ -21,6 +21,7 @@ public:
     T getIngredientDetail(const Ingredient& ingredient) const;
 
     QString toString() const; // New member function to return formatted recipe information
+    QString toStringIngredients() const;
 
 private:
     QString name;
