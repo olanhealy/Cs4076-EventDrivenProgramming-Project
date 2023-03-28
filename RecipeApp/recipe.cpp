@@ -66,6 +66,9 @@ void Recipe::generateNutrition() {
              break;
 }
 }
+const Nutrition& Recipe::getNutrition() const {
+    return nutrition;
+}
 
 
 

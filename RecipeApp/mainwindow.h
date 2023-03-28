@@ -42,5 +42,7 @@ private:
     QRadioButton *burritoBowlRadioButton;
     QRadioButton *saladRadioButton;
     QRadioButton *pastaDishRadioButton;
+    shared_ptr<Recipe> selectedRecipe;
+    void updateNutritionValues();
 };
 #endif // MAINWINDOW_H

@@ -24,6 +24,7 @@ public:
 
     QString toString() const; // New member function to return formatted recipe information
     QString toStringIngredients() const;
+    const Nutrition& getNutrition() const;
 
 private:
     QString name;

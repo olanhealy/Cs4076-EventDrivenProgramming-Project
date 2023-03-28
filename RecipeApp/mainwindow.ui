@@ -72,24 +72,24 @@
    <widget class="QWidget" name="layoutWidget">
     <property name="geometry">
      <rect>
-      <x>20</x>
-      <y>510</y>
+      <x>0</x>
+      <y>530</y>
       <width>295</width>
       <height>26</height>
      </rect>
     </property>
-    <layout class="QHBoxLayout" name="horizontalLayout">
+    <layout class="QHBoxLayout" name="nutritionButtons">
      <item>
-      <widget class="QRadioButton" name="showNutrition">
+      <widget class="QRadioButton" name="hideNutrition">
        <property name="text">
-        <string>Show Nutrition</string>
+        <string>Don't Show Nutrition</string>
        </property>
       </widget>
      </item>
      <item>
-      <widget class="QRadioButton" name="dontShowshowNutrition">
+      <widget class="QRadioButton" name="showNutrition">
        <property name="text">
-        <string>Don't Show Nutrition</string>
+        <string>Show Nutrition</string>
        </property>
       </widget>
      </item>
@@ -145,6 +145,46 @@
     <property name="text">
      <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:18pt; font-weight:700;&quot;&gt;SELECT A MEAL OPTION&lt;/span&gt;&lt;/p&gt;&lt;p align=&quot;center&quot;&gt;&lt;br/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
     </property>
+   </widget>
+   <widget class="QWidget" name="verticalLayoutWidget">
+    <property name="geometry">
+     <rect>
+      <x>440</x>
+      <y>229</y>
+      <width>160</width>
+      <height>321</height>
+     </rect>
+    </property>
+    <layout class="QVBoxLayout" name="verticalLayout_2">
+     <item>
+      <widget class="QLabel" name="fatValueLabel">
+       <property name="text">
+        <string/>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QLabel" name="carbsValueLabel">
+       <property name="text">
+        <string/>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QLabel" name="proteinValueLabel">
+       <property name="text">
+        <string/>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QLabel" name="caloriesValueLabel">
+       <property name="text">
+        <string/>
+       </property>
+      </widget>
+     </item>
+    </layout>
    </widget>
   </widget>
   <widget class="QMenuBar" name="menubar">

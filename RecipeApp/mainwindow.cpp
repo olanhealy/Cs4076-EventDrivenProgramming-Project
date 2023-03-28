@@ -56,6 +56,14 @@ MainWindow::MainWindow(QWidget *parent)
     connect(burritoBowlRadioButton, &QRadioButton::toggled, this, &MainWindow::on_recipeRadioButton_toggled);
     connect(saladRadioButton, &QRadioButton::toggled, this, &MainWindow::on_recipeRadioButton_toggled);
     connect(pastaDishRadioButton, &QRadioButton::toggled, this, &MainWindow::on_recipeRadioButton_toggled);
+
+
+    connect(ui->showNutrition, &QRadioButton::toggled, this, &MainWindow::updateNutritionValues);
+    connect(ui->hideNutrition, &QRadioButton::toggled, this, &MainWindow::updateNutritionValues);
+    connect(chickenCurryRadioButton, &QRadioButton::toggled, this, &MainWindow::updateNutritionValues);
+    connect(burritoBowlRadioButton, &QRadioButton::toggled, this, &MainWindow::updateNutritionValues);
+    connect(saladRadioButton, &QRadioButton::toggled, this, &MainWindow::updateNutritionValues);
+    connect(pastaDishRadioButton, &QRadioButton::toggled, this, &MainWindow::updateNutritionValues);
 }
 
 MainWindow::~MainWindow()
@@ -108,18 +116,22 @@ void MainWindow::on_recipeRadioButton_toggled(bool checked)
         ui->recipeLabel->setText(chickenCurry.toString());
          ui->recipeLabel->show();
         displayIngredientsCheckboxes(chickenCurry);
+        selectedRecipe = make_shared<Recipe>(chickenCurry);
     } else if (burritoBowlRadioButton->isChecked()) {
         ui->recipeLabel->setText(burritoBowl.toString());
         ui->recipeLabel->show();
         displayIngredientsCheckboxes(burritoBowl);
+        selectedRecipe = make_shared<Recipe>(burritoBowl);
     } else if (saladRadioButton->isChecked()) {
         ui->recipeLabel->setText(salad.toString());
          ui->recipeLabel->show();
         displayIngredientsCheckboxes(salad);
+        selectedRecipe = make_shared<Recipe>(salad);
     } else if (pastaDishRadioButton->isChecked()) {
         ui->recipeLabel->setText(pastaDish.toString());
          ui->recipeLabel->show();
         displayIngredientsCheckboxes(pastaDish);
+        selectedRecipe = make_shared<Recipe>(pastaDish);
     }
 }
 void MainWindow::displayIngredientsCheckboxes(const Recipe& recipe)
@@ -142,8 +154,32 @@ void MainWindow::displayIngredientsCheckboxes(const Recipe& recipe)
 
     }
 }
-
-
+void MainWindow::updateNutritionValues() {
+    // Check if a recipe is selected
+    if (this->selectedRecipe != nullptr) {
+        // Check if the radio button for showing nutrition is checked
+        if (this->ui->showNutrition->isChecked()) {
+            // Update nutrition value labels with the selected recipe's nutrition information
+            const Nutrition& nutritionInfo = selectedRecipe->getNutrition();
+            this->ui->fatValueLabel->setText(QString::number(nutritionInfo.getFat()));
+            this->ui->proteinValueLabel->setText(QString::number(nutritionInfo.getProtein()));
+            this->ui->carbsValueLabel->setText(QString::number(nutritionInfo.getCarbs()));
+            this->ui->caloriesValueLabel->setText(QString::number(nutritionInfo.getCalories()));
+        } else {
+            // Clear the nutrition value labels
+            this->ui->fatValueLabel->setText("");
+            this->ui->proteinValueLabel->setText("");
+            this->ui->carbsValueLabel->setText("");
+            this->ui->caloriesValueLabel->setText("");
+        }
+    } else {
+        // Clear the nutrition value labels
+        this->ui->fatValueLabel->setText("");
+        this->ui->proteinValueLabel->setText("");
+        this->ui->carbsValueLabel->setText("");
+        this->ui->caloriesValueLabel->setText("");
+    }
+}
 void MainWindow::on_actionexit_triggered()
 {
     QApplication::quit();
