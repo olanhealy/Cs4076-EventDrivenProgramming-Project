@@ -12,8 +12,12 @@ public:
 
     virtual QString getName() const;
     virtual float getQuantity() const;
+    float setQuantity(double newQuantity);
     virtual QString getUnit() const = 0; // Pure virtual function (abstact class)
     QString toString() const;
+    virtual void scale(int servingSize);
+
+
 
 protected:
     QString name;

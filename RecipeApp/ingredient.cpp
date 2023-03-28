@@ -14,6 +14,15 @@ QString Ingredient::getName() const {
 float Ingredient::getQuantity() const {
     return quantity;
 }
+float Ingredient::setQuantity(double newQuantity) {
+    quantity = newQuantity;
+}
+
 QString Ingredient::toString() const {
     return getName() + ": " + QString::number(getQuantity()) + " " + getUnit();
 }
+
+void Ingredient::scale(int servingSize) {
+    quantity *= servingSize;
+}
+

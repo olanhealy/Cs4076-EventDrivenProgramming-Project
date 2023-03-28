@@ -14,19 +14,6 @@
    <string>MainWindow</string>
   </property>
   <widget class="QWidget" name="centralwidget">
-   <widget class="QSlider" name="verticalSlider">
-    <property name="geometry">
-     <rect>
-      <x>760</x>
-      <y>79</y>
-      <width>20</width>
-      <height>471</height>
-     </rect>
-    </property>
-    <property name="orientation">
-     <enum>Qt::Vertical</enum>
-    </property>
-   </widget>
    <widget class="QLabel" name="label">
     <property name="geometry">
      <rect>
@@ -40,15 +27,15 @@
      <string notr="true">background-color: rgb(255, 85, 127)</string>
     </property>
     <property name="text">
-     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:12pt; font-weight:700;&quot;&gt;Cooking app&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:16pt; font-weight:700;&quot;&gt;Olan's Recipe Application (21318204)&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
     </property>
    </widget>
    <widget class="QWidget" name="layoutWidget">
     <property name="geometry">
      <rect>
-      <x>620</x>
-      <y>80</y>
-      <width>95</width>
+      <x>410</x>
+      <y>50</y>
+      <width>391</width>
       <height>131</height>
      </rect>
     </property>
@@ -149,22 +136,28 @@
    <widget class="QWidget" name="verticalLayoutWidget">
     <property name="geometry">
      <rect>
-      <x>440</x>
-      <y>229</y>
-      <width>160</width>
+      <x>420</x>
+      <y>180</y>
+      <width>231</width>
       <height>321</height>
      </rect>
     </property>
     <layout class="QVBoxLayout" name="verticalLayout_2">
      <item>
-      <widget class="QLabel" name="fatValueLabel">
+      <widget class="QLabel" name="carbsValueLabel">
+       <property name="styleSheet">
+        <string notr="true">background-color: rgb(85, 255, 255)</string>
+       </property>
        <property name="text">
         <string/>
        </property>
       </widget>
      </item>
      <item>
-      <widget class="QLabel" name="carbsValueLabel">
+      <widget class="QLabel" name="fatValueLabel">
+       <property name="styleSheet">
+        <string notr="true">background-color: rgb(85, 255, 255)</string>
+       </property>
        <property name="text">
         <string/>
        </property>
@@ -172,6 +165,9 @@
      </item>
      <item>
       <widget class="QLabel" name="proteinValueLabel">
+       <property name="styleSheet">
+        <string notr="true">background-color: rgb(85, 255, 255)</string>
+       </property>
        <property name="text">
         <string/>
        </property>
@@ -179,12 +175,41 @@
      </item>
      <item>
       <widget class="QLabel" name="caloriesValueLabel">
+       <property name="styleSheet">
+        <string notr="true">background-color: rgb(85, 255, 255)</string>
+       </property>
        <property name="text">
         <string/>
        </property>
       </widget>
      </item>
     </layout>
+   </widget>
+   <widget class="QSlider" name="timeSlider">
+    <property name="geometry">
+     <rect>
+      <x>780</x>
+      <y>179</y>
+      <width>20</width>
+      <height>371</height>
+     </rect>
+    </property>
+    <property name="orientation">
+     <enum>Qt::Vertical</enum>
+    </property>
+   </widget>
+   <widget class="QLabel" name="timeLabel">
+    <property name="geometry">
+     <rect>
+      <x>422</x>
+      <y>509</y>
+      <width>351</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>SET TIMER WITH VERTICAL SLIDER</string>
+    </property>
    </widget>
   </widget>
   <widget class="QMenuBar" name="menubar">

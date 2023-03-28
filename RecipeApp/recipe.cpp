@@ -65,10 +65,14 @@ void Recipe::generateNutrition() {
              nutrition = Nutrition(ingredientCount * 100);
              break;
 }
+
+
 }
 const Nutrition& Recipe::getNutrition() const {
     return nutrition;
 }
+
+
 
 
 

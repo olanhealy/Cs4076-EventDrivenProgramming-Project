@@ -26,16 +26,17 @@ public:
     QString toStringIngredients() const;
     const Nutrition& getNutrition() const;
 
+
+
 private:
     QString name;
     vector<shared_ptr<Ingredient>> ingredients;
     Nutrition nutrition;
     void generateNutrition();
+
     friend class Nutrition;
 };
 
 // Explicitly instantiate the template function for supported types
-extern template QString Recipe::getIngredientDetail<QString>(const Ingredient& ingredient) const;
-extern template float Recipe::getIngredientDetail<float>(const Ingredient& ingredient) const;
 
 #endif
