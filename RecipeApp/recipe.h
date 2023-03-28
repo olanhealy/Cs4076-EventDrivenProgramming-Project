@@ -6,6 +6,8 @@
 #include <vector>
 #include <memory>
 #include "Ingredient.h"
+#include "nutrition.h"
+using namespace std;
 
 class Recipe {
 public:
@@ -13,8 +15,8 @@ public:
     Recipe(const Recipe& other); // Copy constructor
     ~Recipe();
 
-    void addIngredient(std::shared_ptr<Ingredient> ingredient);
-    std::vector<std::shared_ptr<Ingredient>> getIngredients() const;
+    void addIngredient(shared_ptr<Ingredient> ingredient);
+    vector<shared_ptr<Ingredient>> getIngredients() const;
     QString getName() const;
 
     template <typename T>
@@ -25,7 +27,10 @@ public:
 
 private:
     QString name;
-    std::vector<std::shared_ptr<Ingredient>> ingredients;
+    vector<shared_ptr<Ingredient>> ingredients;
+    Nutrition nutrition;
+    void generateNutrition();
+    friend class Nutrition;
 };
 
 // Explicitly instantiate the template function for supported types

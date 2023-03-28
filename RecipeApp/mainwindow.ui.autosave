@@ -78,7 +78,7 @@
       <height>26</height>
      </rect>
     </property>
-    <layout class="QHBoxLayout" name="horizontalLayout">
+    <layout class="QHBoxLayout" name="nutritionButtons">
      <item>
       <widget class="QRadioButton" name="showNutrition">
        <property name="text">

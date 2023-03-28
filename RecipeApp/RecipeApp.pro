@@ -13,6 +13,7 @@ SOURCES += \
     liquidingredient.cpp \
     main.cpp \
     mainwindow.cpp \
+    nutrition.cpp \
     recipe.cpp \
     solidingredient.cpp
 
@@ -20,6 +21,7 @@ HEADERS += \
     ingredient.h \
     liquidingredient.h \
     mainwindow.h \
+    nutrition.h \
     recipe.h \
     solidingredient.h
 

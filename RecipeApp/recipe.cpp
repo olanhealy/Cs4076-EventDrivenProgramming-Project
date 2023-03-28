@@ -3,11 +3,12 @@
 // Global variable
 int recipeCounter = 0;
 
-Recipe::Recipe(const QString& name) : name(name) {
+Recipe::Recipe(const QString& name) : name(name), nutrition(0) {
+    generateNutrition();
     recipeCounter++; // Increment global variable
 }
 
-Recipe::Recipe(const Recipe& other) : name(other.name), ingredients(other.ingredients) {
+Recipe::Recipe(const Recipe& other) : name(other.name), ingredients(other.ingredients), nutrition(other.nutrition) {
     recipeCounter++; // Increment global variable
 }
 
@@ -15,11 +16,12 @@ Recipe::~Recipe() {
     recipeCounter--; // Decrement global variable
 }
 
-void Recipe::addIngredient(std::shared_ptr<Ingredient> ingredient) {
+void Recipe::addIngredient(shared_ptr<Ingredient> ingredient) {
     ingredients.push_back(ingredient);
+    generateNutrition();
 }
 
-std::vector<std::shared_ptr<Ingredient>> Recipe::getIngredients() const {
+vector<shared_ptr<Ingredient>> Recipe::getIngredients() const {
     return ingredients;
 }
 
@@ -29,12 +31,12 @@ QString Recipe::getName() const {
 
 template <typename T>
 T Recipe::getIngredientDetail(const Ingredient& ingredient) const {
-    if constexpr (std::is_same_v<T, QString>) {
+    if constexpr (is_same_v<T, QString>) {
         return ingredient.getName();
-    } else if constexpr (std::is_same_v<T, float>) {
+    } else if constexpr (is_same_v<T, float>) {
         return ingredient.getQuantity();
     } else {
-        throw std::runtime_error("Unsupported type for getIngredientDetail()");
+        throw runtime_error("Unsupported type for getIngredientDetail()");
     }
 }
 
@@ -48,6 +50,21 @@ QString Recipe::toStringIngredients() const {
         result += "- " + ingredient->getName() + ": " + QString::number(ingredient->getQuantity()) + " " + ingredient->getUnit() + "\n";
     }
     return result;
+}
+void Recipe::generateNutrition() {
+    int ingredientCount = static_cast<int>(ingredients.size());
+
+     switch (ingredientCount) {
+         case 1:
+             nutrition = Nutrition(100);
+             break;
+         case 2:
+             nutrition = Nutrition(150);
+             break;
+         default:
+             nutrition = Nutrition(ingredientCount * 100);
+             break;
+}
 }
 
 
