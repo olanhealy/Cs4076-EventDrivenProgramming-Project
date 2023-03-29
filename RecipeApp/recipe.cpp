@@ -25,16 +25,7 @@ QString Recipe::getName() const {
     return name; //returns recipe name
 }
 
-template <typename T> //this can return the name or quantity. it determines type then basis it off that
-T Recipe::getIngredientDetail(const Ingredient& ingredient) const {
-    if constexpr (is_same_v<T, QString>) {
-        return ingredient.getName();
-    } else if constexpr (is_same_v<T, float>) {
-        return ingredient.getQuantity();
-    } else {
-        throw runtime_error("Unsupported type for getIngredientDetail()");
-    }
-}
+
 
 QString Recipe::toString() const {
     QString result = "Recipe: " + name + "\n";

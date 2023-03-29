@@ -8,6 +8,8 @@ class LiquidIngredient : public Ingredient { //inherithance used access to all p
 public:
     LiquidIngredient(const QString& name, float quantity, const QString& unit);
     QString getUnit() const; // Override the pure virtual function so we can display ml
+    template <typename T>
+    T getIngredientDetail(const Ingredient& ingredient) const;
 };
 
 #endif //includes guards

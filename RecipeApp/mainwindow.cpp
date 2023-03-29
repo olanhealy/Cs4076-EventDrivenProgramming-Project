@@ -7,7 +7,9 @@
 #include <QGridLayout>
 #include <QCheckBox>
 #include <QTimer>
+#include <iostream>
 using namespace std;
+int recipeCount = 0;
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
@@ -28,20 +30,24 @@ MainWindow::MainWindow(QWidget *parent)
     carbonara = new Recipe("Carbonara");
     homemadePizza = new Recipe("Homemade Pizza");
 
-    auto peppers = make_shared<SolidIngredient>("Peppers", 100, "g");
-    auto tomatoSauce = make_shared<LiquidIngredient>("Tomato Sauce", 250, "mL");
-    auto cheese = make_shared<SolidIngredient>("Cheese", 100, "g");
-    auto ginger = make_shared<SolidIngredient>("Ginger", 20, "g");
+    auto peppers = make_shared<SolidIngredient>("Peppers", 100.5, "");
+    auto tomatoSauce = make_shared<LiquidIngredient>("Tomato Sauce", 250, "");
+    auto cheese = make_shared<SolidIngredient>("Cheese", 100, "");
+    auto ginger = make_shared<SolidIngredient>("Ginger", 20, "");
     auto tomatoSauceCopy = make_shared<LiquidIngredient>(*tomatoSauce);
     auto peppersCopy = make_shared<SolidIngredient>(*peppers);
     auto cheeseCopy = make_shared<SolidIngredient>(*cheese);
     auto gingerCopy = make_shared<SolidIngredient>(*ginger);
+    float quantity = peppers->getQuantity();
+    SolidIngredient pep("Hi", 20, "");
+
+   // pep.setQuantity(roundQuantity(peppers->getQuantity()));
 
     //add chicken curry ingredients. smart pointer makes it do memory mangement by itself
-    chickenCurry->addIngredient(make_shared<SolidIngredient>("Chicken", 200, "g"));
-    chickenCurry->addIngredient(make_shared<LiquidIngredient>("Coconut Milk", 250, "mL"));
-    chickenCurry->addIngredient(make_shared<SolidIngredient>("Curry Powder", 10, "g"));
-    chickenCurry->addIngredient(make_shared<SolidIngredient>("Rice", 10, "g"));
+    chickenCurry->addIngredient(make_shared<SolidIngredient>("Chicken", 200, ""));
+    chickenCurry->addIngredient(make_shared<LiquidIngredient>("Coconut Milk", 250, ""));
+    chickenCurry->addIngredient(make_shared<SolidIngredient>("Curry Powder", 10, ""));
+    chickenCurry->addIngredient(make_shared<SolidIngredient>("Rice", 10, ""));
     chickenCurry->addIngredient(peppers);
     chickenCurry->addIngredient(gingerCopy);
 
@@ -51,8 +57,9 @@ MainWindow::MainWindow(QWidget *parent)
     burritoBowl->addIngredient(make_shared<SolidIngredient>("Black Beans", 100, ""));
     burritoBowl->addIngredient(make_shared<SolidIngredient>("Corn", 50, ""));
     burritoBowl->addIngredient(make_shared<LiquidIngredient>("Hot Sauce", 200, ""));
-    burritoBowl->addIngredient(make_shared<SolidIngredient>("Mince", 500, ""));
+    burritoBowl->addIngredient(make_shared<SolidIngredient>("Mince", 500.5, ""));
     burritoBowl->addIngredient(make_shared<LiquidIngredient>("Salsa", 200, ""));
+
 
 
     //add salad ingredients
@@ -65,7 +72,7 @@ MainWindow::MainWindow(QWidget *parent)
 
 
     //add pasta dish ingredients
-    pastaDish->addIngredient(make_shared<SolidIngredient>("Pasta", 200, "g"));
+    pastaDish->addIngredient(make_shared<SolidIngredient>("Pasta", 200, ""));
     pastaDish->addIngredient((tomatoSauce));
     pastaDish->addIngredient(cheese);
     pastaDish->addIngredient(peppersCopy);
@@ -74,14 +81,14 @@ MainWindow::MainWindow(QWidget *parent)
     homemadePizza->addIngredient(tomatoSauceCopy);
     homemadePizza->addIngredient(make_shared<SolidIngredient>("pizzaBase", 50, ""));
     homemadePizza-> addIngredient(peppersCopy);
-    homemadePizza->addIngredient(make_shared<SolidIngredient>("Pepperonni", 50, "g"));
+    homemadePizza->addIngredient(make_shared<SolidIngredient>("Pepperonni", 50, ""));
     homemadePizza->addIngredient(cheeseCopy);
-    homemadePizza->addIngredient(make_shared<SolidIngredient>("Mushrooms", 100, "g"));
-    homemadePizza->addIngredient(make_shared<SolidIngredient>("Pineapple", 200, "g"));
+    homemadePizza->addIngredient(make_shared<SolidIngredient>("Mushrooms", 100, ""));
+    homemadePizza->addIngredient(make_shared<SolidIngredient>("Pineapple", 200, ""));
 
 
-    carbonara -> addIngredient(make_shared<SolidIngredient>("Spagetthi", 200, "g"));
-    carbonara-> addIngredient(make_shared<LiquidIngredient>("Carbonara Sauce", 160, "ml"));
+    carbonara -> addIngredient(make_shared<SolidIngredient>("Spagetthi", 200, ""));
+    carbonara-> addIngredient(make_shared<LiquidIngredient>("Carbonara Sauce", 160, ""));
 
 
 
@@ -102,7 +109,8 @@ MainWindow::MainWindow(QWidget *parent)
     pastaDishRadioButton->hide();
     carbonaraRadioButton->hide();
     homemadePizzaRadioButton->hide();
-    ui->recipeLabel->hide();
+
+
     ui->mealOption->hide();
 
 
@@ -151,7 +159,20 @@ MainWindow::MainWindow(QWidget *parent)
         // Update display of remaining time
         QString timeString = time +  QString::number(remainingTime / 60) + ":" + QString::number(remainingTime % 60).rightJustified(2, '0');
         ui->timeLabel->setText(timeString); //set time to display on a label
+
+
+
+
+
     });
+    Recipe* recipes[] = {chickenCurry, burritoBowl, salad, pastaDish, carbonara, homemadePizza};
+    for (int i = 0; i < sizeof(recipes)/sizeof(recipes[0]); i++) {
+        if (recipes[i] != NULL) {
+            recipeCount++;
+        }
+    }
+    QString countText = "Number of recipes: " + QString::number(recipeCount);
+    ui->recipeCount->setText(countText);
 
 }
 
@@ -189,6 +210,7 @@ void MainWindow::on_lowCal_clicked()
     pastaDishRadioButton->show();
     carbonaraRadioButton->show();
     ui->mealOption->show();
+
 
 }
 
@@ -229,12 +251,12 @@ void MainWindow::on_recipeRadioButton_toggled(bool checked)
         selectedRecipe = make_shared<Recipe>(*pastaDish);
         originalRecipe = make_shared<Recipe>(*pastaDish);
     } else if (homemadePizzaRadioButton->isChecked()) {
-        ui->recipeLabel->setText(homemadePizza->toString());
+        ui->recipeLabel->setText(homemadePizza->toString()); //same for homemade pizza
         ui->recipeLabel->show();
         displayIngredientsCheckboxes(*homemadePizza);
         selectedRecipe = make_shared<Recipe>(*homemadePizza);
         originalRecipe = make_shared<Recipe>(*homemadePizza);
-    } else if (carbonaraRadioButton->isChecked()) {
+    } else if (carbonaraRadioButton->isChecked()) { //same for carbonarra
         ui->recipeLabel->setText(carbonara->toString());
         ui->recipeLabel->show();
         displayIngredientsCheckboxes(*carbonara);
@@ -256,6 +278,7 @@ void MainWindow::displayIngredientsCheckboxes(const Recipe& recipe)
     // Create checkboxes for each ingredient and add them to the GridLayout
 
     for (const auto &ingredient : recipe.getIngredients()) {
+
         QCheckBox *ingredientCheckbox = new QCheckBox(ingredient->toString(), this);
 
         ui->ingredientsLayout->addWidget(ingredientCheckbox);

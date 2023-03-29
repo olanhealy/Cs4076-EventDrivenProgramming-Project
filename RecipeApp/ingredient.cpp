@@ -21,6 +21,18 @@ float Ingredient::setQuantity(double newQuantity) {
 QString Ingredient::toString() const {
     return getName() + ": " + QString::number(getQuantity()) + " " + getUnit(); //
 }
+template<typename T>
+T roundQuantity(T quantity) {
+    if constexpr (std::is_same_v<T, int>) {
+        // Do nothing, quantity is already an integer
+    } else if constexpr (std::is_same_v<T, float> || std::is_same_v<T, double>) {
+        quantity = static_cast<T>(std::floor(quantity));
+    } else {
+        throw std::runtime_error("Unsupported type for roundQuantity()");
+    }
+
+    return quantity;
+}
 
 
 

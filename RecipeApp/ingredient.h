@@ -16,6 +16,9 @@ public:
     float setQuantity(double newQuantity);
     virtual QString getUnit() const = 0; // Pure virtual function (abstact class)
     QString toString() const;
+    template<typename T>
+    T roundQuantity(T quantity);
+
 
 
 
