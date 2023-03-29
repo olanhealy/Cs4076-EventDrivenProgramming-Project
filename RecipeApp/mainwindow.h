@@ -28,10 +28,12 @@ private slots:
     void on_lowCal_clicked();
     void on_recipeRadioButton_toggled(bool checked);
     void on_actionexit_triggered();
-    void on_actionRepositry_triggered();
+
     void displayIngredientsCheckboxes(const Recipe& recipe);
     void on_timeSlider_valueChanged(int value);
 
+
+    void on_actionRepo_Link_triggered();
 
 private:
     Ui::MainWindow *ui;

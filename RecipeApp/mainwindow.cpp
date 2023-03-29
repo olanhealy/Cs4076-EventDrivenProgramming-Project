@@ -41,7 +41,7 @@ MainWindow::MainWindow(QWidget *parent)
     float quantity = peppers->getQuantity();
     SolidIngredient pep("Hi", 20, "");
 
-   // pep.setQuantity(roundQuantity(peppers->getQuantity()));
+   // pep.setQuantity(roundQuantity(peppers->getQuantity())); (attempt made with template class)
 
     //add chicken curry ingredients. smart pointer makes it do memory mangement by itself
     chickenCurry->addIngredient(make_shared<SolidIngredient>("Chicken", 200, ""));
@@ -330,10 +330,6 @@ void MainWindow::on_actionexit_triggered()
     QApplication::quit(); //quit application
 }
 
-void MainWindow::on_actionRepositry_triggered()
-{
-    QDesktopServices::openUrl(QUrl("https://github.com/olanhealy/Cs4076-EventDrivenProgramming-Project")); //link to repo
-}
 
 
 void MainWindow::on_timeSlider_valueChanged(int value)
@@ -370,3 +366,9 @@ void MainWindow::memoryMangement() {
         carbonara = nullptr;
     }
 }
+
+void MainWindow::on_actionRepo_Link_triggered()
+{
+     QDesktopServices::openUrl(QUrl( "https://github.com/olanhealy/Cs4076-EventDrivenProgramming-Project")); //link to repo
+}
+
