@@ -2,30 +2,30 @@
 
 
 
-Recipe::Recipe(const QString& name) : name(name), nutrition(0) {
+Recipe::Recipe(const QString& name) : name(name), nutrition(0) { //initalizer list: sets name and then nutrition is set to 0
     generateNutrition();
 
 }
 
-Recipe::Recipe(const Recipe& other) : name(other.name), ingredients(other.ingredients), nutrition(other.nutrition) {
+Recipe::Recipe(const Recipe& other) : name(other.name), ingredients(other.ingredients), nutrition(other.nutrition) { //copy constructor initializes the name, ingredients, and nutrition member variables of the class with the corresponding variables from the passed other object.
 
 }
 
 
-void Recipe::addIngredient(shared_ptr<Ingredient> ingredient) {
+void Recipe::addIngredient(shared_ptr<Ingredient> ingredient) { //adds new ingredient to vector of ingredients. Used vectors as I didnt want to fix a size of an array. also easier for memory mangement
     ingredients.push_back(ingredient);
-    generateNutrition();
+    generateNutrition(); //it also generates nutrition for the recipe
 }
 
 vector<shared_ptr<Ingredient>> Recipe::getIngredients() const {
-    return ingredients;
+    return ingredients; //gets the ingriendts
 }
 
 QString Recipe::getName() const {
-    return name;
+    return name; //returns recipe name
 }
 
-template <typename T>
+template <typename T> //this can return the name or quantity. it determines type then basis it off that
 T Recipe::getIngredientDetail(const Ingredient& ingredient) const {
     if constexpr (is_same_v<T, QString>) {
         return ingredient.getName();
@@ -38,17 +38,11 @@ T Recipe::getIngredientDetail(const Ingredient& ingredient) const {
 
 QString Recipe::toString() const {
     QString result = "Recipe: " + name + "\n";
-    return result;
+    return result; //format string to return name of recipe
 }
-QString Recipe::toStringIngredients() const {
-    QString result;
-    for (const auto& ingredient : ingredients) {
-        result += "- " + ingredient->getName() + ": " + QString::number(ingredient->getQuantity()) + " " + ingredient->getUnit() + "\n";
-    }
-    return result;
-}
+
 void Recipe::generateNutrition() {
-    int ingredientCount = static_cast<int>(ingredients.size());
+    int ingredientCount = static_cast<int>(ingredients.size()); //calculates nutrional values based on the number of ingredients in the recip
 
      switch (ingredientCount) {
          case 1:
@@ -57,6 +51,9 @@ void Recipe::generateNutrition() {
          case 2:
              nutrition = Nutrition(150);
              break;
+        case 3:
+         nutrition = Nutrition(200);
+            break;
          default:
              nutrition = Nutrition(ingredientCount * 100);
              break;
@@ -65,7 +62,7 @@ void Recipe::generateNutrition() {
 
 }
 const Nutrition& Recipe::getNutrition() const {
-    return nutrition;
+    return nutrition; //returns nutrition
 }
 Recipe::~Recipe() {
 

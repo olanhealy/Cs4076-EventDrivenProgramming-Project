@@ -12,29 +12,29 @@ using namespace std;
 class Recipe {
 public:
     Recipe(const QString& name);
-    Recipe(const Recipe& other); // Copy constructor
-    ~Recipe();
+    Recipe(const Recipe& other); // Copy constructor (shallow)
+    ~Recipe(); //destructor
 
-    void addIngredient(shared_ptr<Ingredient> ingredient);
+    void addIngredient(shared_ptr<Ingredient> ingredient); //used smart pointer as otherwise would have been creating and deleting abudance of ingredients. helps clean it up
     vector<shared_ptr<Ingredient>> getIngredients() const;
     QString getName() const;
     template <typename T>
-    T getIngredientDetail(const Ingredient& ingredient) const;
-    QString toString() const; // New member function to return formatted recipe information
-    QString toStringIngredients() const;
-    const Nutrition& getNutrition() const;
+    T getIngredientDetail(const Ingredient& ingredient) const; //template function to take any template as an argument
+    QString toString() const; // format it for recipe name
 
+    const Nutrition& getNutrition() const;
+ QString name;
 
 
 private:
-    QString name;
+
     vector<shared_ptr<Ingredient>> ingredients;
     Nutrition nutrition;
     void generateNutrition();
 
-    friend class Nutrition;
+    friend class Nutrition; //friend of nutrition so it has access to its private data
 };
 
-// Explicitly instantiate the template function for supported types
+
 
 #endif

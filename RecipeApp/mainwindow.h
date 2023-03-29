@@ -39,10 +39,16 @@ private:
     Recipe* burritoBowl = nullptr;
     Recipe* salad = nullptr;
     Recipe* pastaDish = nullptr;
+    Recipe* homemadePizza = nullptr;
+    Recipe* carbonara = nullptr;
+
     QRadioButton *chickenCurryRadioButton;
     QRadioButton *burritoBowlRadioButton;
     QRadioButton *saladRadioButton;
     QRadioButton *pastaDishRadioButton;
+    QRadioButton *homemadePizzaRadioButton;
+    QRadioButton *carbonaraRadioButton;
+    QRadioButton *pastaDishTwoRadioButton;
     shared_ptr<Recipe> selectedRecipe;
     shared_ptr<Recipe> originalRecipe;
     void updateNutritionValues();

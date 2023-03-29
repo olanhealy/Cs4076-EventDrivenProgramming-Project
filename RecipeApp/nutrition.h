@@ -5,7 +5,7 @@
 #include <random>
 
 
-namespace NutritionalValues {
+namespace NutritionalValues { //namespace used to group the nutrional values
     const int MIN_FAT = 2;
     const int MAX_FAT = 8;
     const int MIN_PROTEIN = 5;
@@ -27,9 +27,9 @@ private:
     int fat;
     int protein;
     int carbs;
-    int calories;
+    int calories; //only accessed by nutrition (changes in recipe when see it)
 
-    friend class Recipe;
+
 };
 
 #endif // NUTRITION_H

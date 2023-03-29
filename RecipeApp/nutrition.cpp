@@ -1,8 +1,8 @@
 #include "Nutrition.h"
 
 Nutrition::Nutrition(int calorieCount) {
-    // Set calories
-    calories = calorieCount;
+
+    calories = calorieCount; // Set calories
 
     // Compute fat, protein, and carbs based on calories
     fat = static_cast<int>(calories * 0.3 / 9);
@@ -11,17 +11,17 @@ Nutrition::Nutrition(int calorieCount) {
 }
 
 int Nutrition::getFat() const {
-    return fat;
+    return fat; //returns fat
 }
 
 int Nutrition::getProtein() const {
-    return protein;
+    return protein;//returns protein
 }
 
 int Nutrition::getCarbs() const {
-    return carbs;
+    return carbs; //returns carbs
 }
 
 int Nutrition::getCalories() const {
-    return calories;
+    return calories; //returns calories
 }
