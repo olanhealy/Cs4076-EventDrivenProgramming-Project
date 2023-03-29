@@ -18,10 +18,8 @@ public:
     void addIngredient(shared_ptr<Ingredient> ingredient);
     vector<shared_ptr<Ingredient>> getIngredients() const;
     QString getName() const;
-
     template <typename T>
     T getIngredientDetail(const Ingredient& ingredient) const;
-
     QString toString() const; // New member function to return formatted recipe information
     QString toStringIngredients() const;
     const Nutrition& getNutrition() const;

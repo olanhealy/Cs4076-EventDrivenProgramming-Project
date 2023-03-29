@@ -22,7 +22,5 @@ QString Ingredient::toString() const {
     return getName() + ": " + QString::number(getQuantity()) + " " + getUnit();
 }
 
-void Ingredient::scale(int servingSize) {
-    quantity *= servingSize;
-}
+
 

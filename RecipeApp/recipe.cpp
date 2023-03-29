@@ -1,20 +1,16 @@
 #include "Recipe.h"
 
-// Global variable
-int recipeCounter = 0;
+
 
 Recipe::Recipe(const QString& name) : name(name), nutrition(0) {
     generateNutrition();
-    recipeCounter++; // Increment global variable
+
 }
 
 Recipe::Recipe(const Recipe& other) : name(other.name), ingredients(other.ingredients), nutrition(other.nutrition) {
-    recipeCounter++; // Increment global variable
+
 }
 
-Recipe::~Recipe() {
-    recipeCounter--; // Decrement global variable
-}
 
 void Recipe::addIngredient(shared_ptr<Ingredient> ingredient) {
     ingredients.push_back(ingredient);
@@ -71,8 +67,9 @@ void Recipe::generateNutrition() {
 const Nutrition& Recipe::getNutrition() const {
     return nutrition;
 }
+Recipe::~Recipe() {
 
-
+}
 
 
 

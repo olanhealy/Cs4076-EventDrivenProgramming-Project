@@ -30,18 +30,15 @@ private slots:
     void on_actionexit_triggered();
     void on_actionRepositry_triggered();
     void displayIngredientsCheckboxes(const Recipe& recipe);
-
-
-
-
     void on_timeSlider_valueChanged(int value);
+
 
 private:
     Ui::MainWindow *ui;
-    Recipe chickenCurry;
-    Recipe burritoBowl;
-    Recipe salad;
-    Recipe pastaDish;
+    Recipe* chickenCurry = nullptr;
+    Recipe* burritoBowl = nullptr;
+    Recipe* salad = nullptr;
+    Recipe* pastaDish = nullptr;
     QRadioButton *chickenCurryRadioButton;
     QRadioButton *burritoBowlRadioButton;
     QRadioButton *saladRadioButton;
@@ -50,5 +47,7 @@ private:
     shared_ptr<Recipe> originalRecipe;
     void updateNutritionValues();
     int remainingTime = 0;
+    void  memoryMangement();
+
 };
 #endif // MAINWINDOW_H
